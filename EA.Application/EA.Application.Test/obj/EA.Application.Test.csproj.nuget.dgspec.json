@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\eas\\ea.application\\EA.Application\\EA.Application.Test\\EA.Application.Test.csproj": {}
+    "D:\\Users\\ABS\\Documents\\GitHub\\EABackend\\EA.Application\\EA.Application.Test\\EA.Application.Test.csproj": {}
   },
   "projects": {
-    "D:\\eas\\ea.application\\EA.Application\\EA.Application.Test\\EA.Application.Test.csproj": {
+    "D:\\Users\\ABS\\Documents\\GitHub\\EABackend\\EA.Application\\EA.Application.Test\\EA.Application.Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\eas\\ea.application\\EA.Application\\EA.Application.Test\\EA.Application.Test.csproj",
+        "projectUniqueName": "D:\\Users\\ABS\\Documents\\GitHub\\EABackend\\EA.Application\\EA.Application.Test\\EA.Application.Test.csproj",
         "projectName": "EA.Application.Test",
-        "projectPath": "D:\\eas\\ea.application\\EA.Application\\EA.Application.Test\\EA.Application.Test.csproj",
+        "projectPath": "D:\\Users\\ABS\\Documents\\GitHub\\EABackend\\EA.Application\\EA.Application.Test\\EA.Application.Test.csproj",
         "packagesPath": "C:\\Users\\ABS\\.nuget\\packages\\",
-        "outputPath": "D:\\eas\\ea.application\\EA.Application\\EA.Application.Test\\obj\\",
+        "outputPath": "D:\\Users\\ABS\\Documents\\GitHub\\EABackend\\EA.Application\\EA.Application.Test\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

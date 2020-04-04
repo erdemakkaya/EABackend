@@ -3574,11 +3574,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\eas\\ea.application\\EA.Application\\EA.Application.Common\\EA.Application.Common.csproj",
+      "projectUniqueName": "D:\\Users\\ABS\\Documents\\GitHub\\EABackend\\EA.Application\\EA.Application.Common\\EA.Application.Common.csproj",
       "projectName": "EA.Application.Common",
-      "projectPath": "D:\\eas\\ea.application\\EA.Application\\EA.Application.Common\\EA.Application.Common.csproj",
+      "projectPath": "D:\\Users\\ABS\\Documents\\GitHub\\EABackend\\EA.Application\\EA.Application.Common\\EA.Application.Common.csproj",
       "packagesPath": "C:\\Users\\ABS\\.nuget\\packages\\",
-      "outputPath": "D:\\eas\\ea.application\\EA.Application\\EA.Application.Common\\obj\\",
+      "outputPath": "D:\\Users\\ABS\\Documents\\GitHub\\EABackend\\EA.Application\\EA.Application.Common\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

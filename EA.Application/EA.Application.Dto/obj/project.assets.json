@@ -6198,11 +6198,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\eas\\ea.application\\EA.Application\\EA.Application.Dto\\EA.Application.Dto.csproj",
+      "projectUniqueName": "D:\\Users\\ABS\\Documents\\GitHub\\EABackend\\EA.Application\\EA.Application.Dto\\EA.Application.Dto.csproj",
       "projectName": "EA.Application.Dto",
-      "projectPath": "D:\\eas\\ea.application\\EA.Application\\EA.Application.Dto\\EA.Application.Dto.csproj",
+      "projectPath": "D:\\Users\\ABS\\Documents\\GitHub\\EABackend\\EA.Application\\EA.Application.Dto\\EA.Application.Dto.csproj",
       "packagesPath": "C:\\Users\\ABS\\.nuget\\packages\\",
-      "outputPath": "D:\\eas\\ea.application\\EA.Application\\EA.Application.Dto\\obj\\",
+      "outputPath": "D:\\Users\\ABS\\Documents\\GitHub\\EABackend\\EA.Application\\EA.Application.Dto\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -6221,11 +6221,11 @@
       "frameworks": {
         "netcoreapp3.0": {
           "projectReferences": {
-            "D:\\eas\\ea.application\\EA.Application\\EA.Application.Common\\EA.Application.Common.csproj": {
-              "projectPath": "D:\\eas\\ea.application\\EA.Application\\EA.Application.Common\\EA.Application.Common.csproj"
+            "D:\\Users\\ABS\\Documents\\GitHub\\EABackend\\EA.Application\\EA.Application.Common\\EA.Application.Common.csproj": {
+              "projectPath": "D:\\Users\\ABS\\Documents\\GitHub\\EABackend\\EA.Application\\EA.Application.Common\\EA.Application.Common.csproj"
             },
-            "D:\\eas\\ea.application\\EA.Application\\EA.Application.Data\\EA.Application.Data.csproj": {
-              "projectPath": "D:\\eas\\ea.application\\EA.Application\\EA.Application.Data\\EA.Application.Data.csproj"
+            "D:\\Users\\ABS\\Documents\\GitHub\\EABackend\\EA.Application\\EA.Application.Data\\EA.Application.Data.csproj": {
+              "projectPath": "D:\\Users\\ABS\\Documents\\GitHub\\EABackend\\EA.Application\\EA.Application.Data\\EA.Application.Data.csproj"
             }
           }
         }

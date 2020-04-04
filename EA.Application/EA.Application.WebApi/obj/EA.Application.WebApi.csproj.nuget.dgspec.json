@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\eas\\ea.application\\EA.Application\\EA.Application.WebApi\\EA.Application.WebApi.csproj": {}
+    "D:\\Users\\ABS\\Documents\\GitHub\\EABackend\\EA.Application\\EA.Application.WebApi\\EA.Application.WebApi.csproj": {}
   },
   "projects": {
-    "D:\\eas\\ea.application\\EA.Application\\EA.Application.Common\\EA.Application.Common.csproj": {
+    "D:\\Users\\ABS\\Documents\\GitHub\\EABackend\\EA.Application\\EA.Application.Common\\EA.Application.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\eas\\ea.application\\EA.Application\\EA.Application.Common\\EA.Application.Common.csproj",
+        "projectUniqueName": "D:\\Users\\ABS\\Documents\\GitHub\\EABackend\\EA.Application\\EA.Application.Common\\EA.Application.Common.csproj",
         "projectName": "EA.Application.Common",
-        "projectPath": "D:\\eas\\ea.application\\EA.Application\\EA.Application.Common\\EA.Application.Common.csproj",
+        "projectPath": "D:\\Users\\ABS\\Documents\\GitHub\\EABackend\\EA.Application\\EA.Application.Common\\EA.Application.Common.csproj",
         "packagesPath": "C:\\Users\\ABS\\.nuget\\packages\\",
-        "outputPath": "D:\\eas\\ea.application\\EA.Application\\EA.Application.Common\\obj\\",
+        "outputPath": "D:\\Users\\ABS\\Documents\\GitHub\\EABackend\\EA.Application\\EA.Application.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -91,14 +91,14 @@
         }
       }
     },
-    "D:\\eas\\ea.application\\EA.Application\\EA.Application.Data\\EA.Application.Data.csproj": {
+    "D:\\Users\\ABS\\Documents\\GitHub\\EABackend\\EA.Application\\EA.Application.Data\\EA.Application.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\eas\\ea.application\\EA.Application\\EA.Application.Data\\EA.Application.Data.csproj",
+        "projectUniqueName": "D:\\Users\\ABS\\Documents\\GitHub\\EABackend\\EA.Application\\EA.Application.Data\\EA.Application.Data.csproj",
         "projectName": "EA.Application.Data",
-        "projectPath": "D:\\eas\\ea.application\\EA.Application\\EA.Application.Data\\EA.Application.Data.csproj",
+        "projectPath": "D:\\Users\\ABS\\Documents\\GitHub\\EABackend\\EA.Application\\EA.Application.Data\\EA.Application.Data.csproj",
         "packagesPath": "C:\\Users\\ABS\\.nuget\\packages\\",
-        "outputPath": "D:\\eas\\ea.application\\EA.Application\\EA.Application.Data\\obj\\",
+        "outputPath": "D:\\Users\\ABS\\Documents\\GitHub\\EABackend\\EA.Application\\EA.Application.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -117,8 +117,8 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "D:\\eas\\ea.application\\EA.Application\\EA.Application.Common\\EA.Application.Common.csproj": {
-                "projectPath": "D:\\eas\\ea.application\\EA.Application\\EA.Application.Common\\EA.Application.Common.csproj"
+              "D:\\Users\\ABS\\Documents\\GitHub\\EABackend\\EA.Application\\EA.Application.Common\\EA.Application.Common.csproj": {
+                "projectPath": "D:\\Users\\ABS\\Documents\\GitHub\\EABackend\\EA.Application\\EA.Application.Common\\EA.Application.Common.csproj"
               }
             }
           }
@@ -189,14 +189,14 @@
         }
       }
     },
-    "D:\\eas\\ea.application\\EA.Application\\EA.Application.Dto\\EA.Application.Dto.csproj": {
+    "D:\\Users\\ABS\\Documents\\GitHub\\EABackend\\EA.Application\\EA.Application.Dto\\EA.Application.Dto.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\eas\\ea.application\\EA.Application\\EA.Application.Dto\\EA.Application.Dto.csproj",
+        "projectUniqueName": "D:\\Users\\ABS\\Documents\\GitHub\\EABackend\\EA.Application\\EA.Application.Dto\\EA.Application.Dto.csproj",
         "projectName": "EA.Application.Dto",
-        "projectPath": "D:\\eas\\ea.application\\EA.Application\\EA.Application.Dto\\EA.Application.Dto.csproj",
+        "projectPath": "D:\\Users\\ABS\\Documents\\GitHub\\EABackend\\EA.Application\\EA.Application.Dto\\EA.Application.Dto.csproj",
         "packagesPath": "C:\\Users\\ABS\\.nuget\\packages\\",
-        "outputPath": "D:\\eas\\ea.application\\EA.Application\\EA.Application.Dto\\obj\\",
+        "outputPath": "D:\\Users\\ABS\\Documents\\GitHub\\EABackend\\EA.Application\\EA.Application.Dto\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -215,11 +215,11 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "D:\\eas\\ea.application\\EA.Application\\EA.Application.Common\\EA.Application.Common.csproj": {
-                "projectPath": "D:\\eas\\ea.application\\EA.Application\\EA.Application.Common\\EA.Application.Common.csproj"
+              "D:\\Users\\ABS\\Documents\\GitHub\\EABackend\\EA.Application\\EA.Application.Common\\EA.Application.Common.csproj": {
+                "projectPath": "D:\\Users\\ABS\\Documents\\GitHub\\EABackend\\EA.Application\\EA.Application.Common\\EA.Application.Common.csproj"
               },
-              "D:\\eas\\ea.application\\EA.Application\\EA.Application.Data\\EA.Application.Data.csproj": {
-                "projectPath": "D:\\eas\\ea.application\\EA.Application\\EA.Application.Data\\EA.Application.Data.csproj"
+              "D:\\Users\\ABS\\Documents\\GitHub\\EABackend\\EA.Application\\EA.Application.Data\\EA.Application.Data.csproj": {
+                "projectPath": "D:\\Users\\ABS\\Documents\\GitHub\\EABackend\\EA.Application\\EA.Application.Data\\EA.Application.Data.csproj"
               }
             }
           }
@@ -266,14 +266,14 @@
         }
       }
     },
-    "D:\\eas\\ea.application\\EA.Application\\EA.Application.WebApi\\EA.Application.WebApi.csproj": {
+    "D:\\Users\\ABS\\Documents\\GitHub\\EABackend\\EA.Application\\EA.Application.WebApi\\EA.Application.WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\eas\\ea.application\\EA.Application\\EA.Application.WebApi\\EA.Application.WebApi.csproj",
+        "projectUniqueName": "D:\\Users\\ABS\\Documents\\GitHub\\EABackend\\EA.Application\\EA.Application.WebApi\\EA.Application.WebApi.csproj",
         "projectName": "EA.Application.WebApi",
-        "projectPath": "D:\\eas\\ea.application\\EA.Application\\EA.Application.WebApi\\EA.Application.WebApi.csproj",
+        "projectPath": "D:\\Users\\ABS\\Documents\\GitHub\\EABackend\\EA.Application\\EA.Application.WebApi\\EA.Application.WebApi.csproj",
         "packagesPath": "C:\\Users\\ABS\\.nuget\\packages\\",
-        "outputPath": "D:\\eas\\ea.application\\EA.Application\\EA.Application.WebApi\\obj\\",
+        "outputPath": "D:\\Users\\ABS\\Documents\\GitHub\\EABackend\\EA.Application\\EA.Application.WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -292,14 +292,14 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "D:\\eas\\ea.application\\EA.Application\\EA.Application.Common\\EA.Application.Common.csproj": {
-                "projectPath": "D:\\eas\\ea.application\\EA.Application\\EA.Application.Common\\EA.Application.Common.csproj"
+              "D:\\Users\\ABS\\Documents\\GitHub\\EABackend\\EA.Application\\EA.Application.Common\\EA.Application.Common.csproj": {
+                "projectPath": "D:\\Users\\ABS\\Documents\\GitHub\\EABackend\\EA.Application\\EA.Application.Common\\EA.Application.Common.csproj"
               },
-              "D:\\eas\\ea.application\\EA.Application\\EA.Application.Data\\EA.Application.Data.csproj": {
-                "projectPath": "D:\\eas\\ea.application\\EA.Application\\EA.Application.Data\\EA.Application.Data.csproj"
+              "D:\\Users\\ABS\\Documents\\GitHub\\EABackend\\EA.Application\\EA.Application.Data\\EA.Application.Data.csproj": {
+                "projectPath": "D:\\Users\\ABS\\Documents\\GitHub\\EABackend\\EA.Application\\EA.Application.Data\\EA.Application.Data.csproj"
               },
-              "D:\\eas\\ea.application\\EA.Application\\EA.Application.Dto\\EA.Application.Dto.csproj": {
-                "projectPath": "D:\\eas\\ea.application\\EA.Application\\EA.Application.Dto\\EA.Application.Dto.csproj"
+              "D:\\Users\\ABS\\Documents\\GitHub\\EABackend\\EA.Application\\EA.Application.Dto\\EA.Application.Dto.csproj": {
+                "projectPath": "D:\\Users\\ABS\\Documents\\GitHub\\EABackend\\EA.Application\\EA.Application.Dto\\EA.Application.Dto.csproj"
               }
             }
           }

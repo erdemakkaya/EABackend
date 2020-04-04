@@ -33,3 +33,56 @@ WHERE ([u].[Id] = @__user_Id_0) AND @__user_Id_0 IS NOT NULL
 2020-04-05 00:37:21.368 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor: Executing ObjectResult, writing value of type 'EA.Application.Common.Api.ApiResult`1[[EA.Application.Dto.DTOS.ApplicationUserDto, EA.Application.Dto, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
 2020-04-05 00:37:21.380 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Executed action EA.Application.WebApi.Controllers.UserController.AddAsync (EA.Application.WebApi) in 16122.8017ms
 2020-04-05 00:37:21.387 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 16136.1748ms 200 application/json; charset=utf-8
+2020-04-05 01:52:22.711 +03:00 [Information] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager: User profile is available. Using 'C:\Users\ABS\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-04-05 01:52:23.045 +03:00 [Information] Microsoft.Hosting.Lifetime: Application started. Press Ctrl+C to shut down.
+2020-04-05 01:52:23.068 +03:00 [Information] Microsoft.Hosting.Lifetime: Hosting environment: Development
+2020-04-05 01:52:23.070 +03:00 [Information] Microsoft.Hosting.Lifetime: Content root path: D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.WebApi
+2020-04-05 01:52:23.098 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/  
+2020-04-05 01:52:23.131 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: No cached response available for this request.
+2020-04-05 01:52:23.287 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2020-04-05 01:52:23.325 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 229.73930000000001ms 404 text/plain
+2020-04-05 01:53:58.684 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 POST http://localhost:51494/Role/AddAsync application/json 60
+2020-04-05 01:53:58.761 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Route matched with {action = "Add", controller = "Role"}. Executing controller action with signature System.Threading.Tasks.Task`1[EA.Application.Common.Api.ApiResult`1[EA.Application.Dto.DTOS.ApplicationRoleDto]] AddAsync(EA.Application.Dto.DTOS.ApplicationRoleDto) on controller EA.Application.WebApi.Controllers.RoleController (EA.Application.WebApi).
+2020-04-05 01:53:59.475 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-05 01:54:00.086 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__normalizedName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreateDate], [r].[Creator], [r].[Description], [r].[Name], [r].[NormalizedName], [r].[Status]
+FROM [Roles] AS [r]
+WHERE (([r].[NormalizedName] = @__normalizedName_0) AND ([r].[NormalizedName] IS NOT NULL AND @__normalizedName_0 IS NOT NULL)) OR ([r].[NormalizedName] IS NULL AND @__normalizedName_0 IS NULL)
+2020-04-05 01:54:00.321 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Guid), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Roles] ([Id], [ConcurrencyStamp], [CreateDate], [Creator], [Description], [Name], [NormalizedName], [Status])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+2020-04-05 01:54:00.355 +03:00 [Information] EA.Application.WebApi.Controllers.RoleController: Add Role with roleId:53a2223a-27af-4e30-de30-08d7d8eb107e role Name:Admin role Desc:üst düzey yönetici result:Role Added Successfully.
+2020-04-05 01:54:00.364 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor: Executing ObjectResult, writing value of type 'EA.Application.Common.Api.ApiResult`1[[EA.Application.Dto.DTOS.ApplicationRoleDto, EA.Application.Dto, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-04-05 01:54:00.384 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Executed action EA.Application.WebApi.Controllers.RoleController.AddAsync (EA.Application.WebApi) in 1613.905ms
+2020-04-05 01:54:00.392 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 1709.1719ms 200 application/json; charset=utf-8
+2020-04-05 01:55:08.090 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 POST http://localhost:51494/Role/AddAsync application/json 47
+2020-04-05 01:55:08.100 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Route matched with {action = "Add", controller = "Role"}. Executing controller action with signature System.Threading.Tasks.Task`1[EA.Application.Common.Api.ApiResult`1[EA.Application.Dto.DTOS.ApplicationRoleDto]] AddAsync(EA.Application.Dto.DTOS.ApplicationRoleDto) on controller EA.Application.WebApi.Controllers.RoleController (EA.Application.WebApi).
+2020-04-05 01:55:08.151 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-05 01:55:08.164 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__normalizedName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreateDate], [r].[Creator], [r].[Description], [r].[Name], [r].[NormalizedName], [r].[Status]
+FROM [Roles] AS [r]
+WHERE (([r].[NormalizedName] = @__normalizedName_0) AND ([r].[NormalizedName] IS NOT NULL AND @__normalizedName_0 IS NOT NULL)) OR ([r].[NormalizedName] IS NULL AND @__normalizedName_0 IS NULL)
+2020-04-05 01:55:08.556 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Guid), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Roles] ([Id], [ConcurrencyStamp], [CreateDate], [Creator], [Description], [Name], [NormalizedName], [Status])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+2020-04-05 01:55:08.562 +03:00 [Information] EA.Application.WebApi.Controllers.RoleController: Add Role with roleId:dd6f920b-c152-4523-de31-08d7d8eb107e role Name:Editor role Desc:Editör result:Role Added Successfully.
+2020-04-05 01:55:08.565 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor: Executing ObjectResult, writing value of type 'EA.Application.Common.Api.ApiResult`1[[EA.Application.Dto.DTOS.ApplicationRoleDto, EA.Application.Dto, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-04-05 01:55:08.569 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Executed action EA.Application.WebApi.Controllers.RoleController.AddAsync (EA.Application.WebApi) in 465.96790000000004ms
+2020-04-05 01:55:08.572 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 482.35ms 200 application/json; charset=utf-8
+2020-04-05 01:55:24.758 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 POST http://localhost:51494/Role/AddAsync application/json 56
+2020-04-05 01:55:24.763 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Route matched with {action = "Add", controller = "Role"}. Executing controller action with signature System.Threading.Tasks.Task`1[EA.Application.Common.Api.ApiResult`1[EA.Application.Dto.DTOS.ApplicationRoleDto]] AddAsync(EA.Application.Dto.DTOS.ApplicationRoleDto) on controller EA.Application.WebApi.Controllers.RoleController (EA.Application.WebApi).
+2020-04-05 01:55:24.782 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-05 01:55:24.792 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__normalizedName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreateDate], [r].[Creator], [r].[Description], [r].[Name], [r].[NormalizedName], [r].[Status]
+FROM [Roles] AS [r]
+WHERE (([r].[NormalizedName] = @__normalizedName_0) AND ([r].[NormalizedName] IS NOT NULL AND @__normalizedName_0 IS NOT NULL)) OR ([r].[NormalizedName] IS NULL AND @__normalizedName_0 IS NULL)
+2020-04-05 01:55:24.801 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Guid), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Roles] ([Id], [ConcurrencyStamp], [CreateDate], [Creator], [Description], [Name], [NormalizedName], [Status])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+2020-04-05 01:55:24.807 +03:00 [Information] EA.Application.WebApi.Controllers.RoleController: Add Role with roleId:f36a74c9-4aa2-46af-de32-08d7d8eb107e role Name:Duzenleyici role Desc:Duzenleyici result:Role Added Successfully.
+2020-04-05 01:55:24.811 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor: Executing ObjectResult, writing value of type 'EA.Application.Common.Api.ApiResult`1[[EA.Application.Dto.DTOS.ApplicationRoleDto, EA.Application.Dto, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-04-05 01:55:24.814 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Executed action EA.Application.WebApi.Controllers.RoleController.AddAsync (EA.Application.WebApi) in 47.676ms
+2020-04-05 01:55:24.818 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 59.7342ms 200 application/json; charset=utf-8
