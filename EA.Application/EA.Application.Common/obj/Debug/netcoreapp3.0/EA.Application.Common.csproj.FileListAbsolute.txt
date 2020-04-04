@@ -1,0 +1,16 @@
+C:\Users\ERDEM\Documents\ea.application\EA.Application\EA.Application.Common\bin\Debug\netcoreapp3.0\EA.Application.Common.deps.json
+C:\Users\ERDEM\Documents\ea.application\EA.Application\EA.Application.Common\bin\Debug\netcoreapp3.0\EA.Application.Common.dll
+C:\Users\ERDEM\Documents\ea.application\EA.Application\EA.Application.Common\bin\Debug\netcoreapp3.0\EA.Application.Common.pdb
+C:\Users\ERDEM\Documents\ea.application\EA.Application\EA.Application.Common\obj\Debug\netcoreapp3.0\EA.Application.Common.csprojAssemblyReference.cache
+C:\Users\ERDEM\Documents\ea.application\EA.Application\EA.Application.Common\obj\Debug\netcoreapp3.0\EA.Application.Common.AssemblyInfoInputs.cache
+C:\Users\ERDEM\Documents\ea.application\EA.Application\EA.Application.Common\obj\Debug\netcoreapp3.0\EA.Application.Common.AssemblyInfo.cs
+C:\Users\ERDEM\Documents\ea.application\EA.Application\EA.Application.Common\obj\Debug\netcoreapp3.0\EA.Application.Common.dll
+C:\Users\ERDEM\Documents\ea.application\EA.Application\EA.Application.Common\obj\Debug\netcoreapp3.0\EA.Application.Common.pdb
+D:\eas\ea.application\EA.Application\EA.Application.Common\bin\Debug\netcoreapp3.0\EA.Application.Common.deps.json
+D:\eas\ea.application\EA.Application\EA.Application.Common\bin\Debug\netcoreapp3.0\EA.Application.Common.dll
+D:\eas\ea.application\EA.Application\EA.Application.Common\bin\Debug\netcoreapp3.0\EA.Application.Common.pdb
+D:\eas\ea.application\EA.Application\EA.Application.Common\obj\Debug\netcoreapp3.0\EA.Application.Common.csprojAssemblyReference.cache
+D:\eas\ea.application\EA.Application\EA.Application.Common\obj\Debug\netcoreapp3.0\EA.Application.Common.AssemblyInfoInputs.cache
+D:\eas\ea.application\EA.Application\EA.Application.Common\obj\Debug\netcoreapp3.0\EA.Application.Common.AssemblyInfo.cs
+D:\eas\ea.application\EA.Application\EA.Application.Common\obj\Debug\netcoreapp3.0\EA.Application.Common.dll
+D:\eas\ea.application\EA.Application\EA.Application.Common\obj\Debug\netcoreapp3.0\EA.Application.Common.pdb
