@@ -12,7 +12,7 @@ namespace EA.Application.Data.Entitites
     /// Sisteme giriş yapacak tüm kullanıcılar bu sınıf ile yönetilecek
     /// Generic tip olarak Guid veriyoruz bu tip ile Identity Id bilgisinin hangi formatta saklanacağını belirlemiş oluyor
     /// </summary>
-    public class ApplicationUser : IdentityUser<Guid>,IEntity
+    public class ApplicationUser : IdentityUser<Guid>,IEntity,IFullAudited
     {
         private AppStatus status;
         private DateTime createdDate;
@@ -40,20 +40,15 @@ namespace EA.Application.Data.Entitites
         /// </summary>
         public virtual List<ApplicationUserRole> UserRoles { get; set; }
 
-        public DateTime? CreateDate
-        {
-            get
-            {
-                return createdDate;
-            }
-            set
-            {
-                createdDate = value ?? DateTime.UtcNow;
-            }
-        }
+        public DateTime? CreateDate { get; set; }
 
         public Guid? Creator { get; set; }
 
+        public Guid? LastModifierUserId { get; set; }
+        public DateTime? LastModificationTime { get; set; }
+        public long? DeleterUserId { get; set; }
+        public DateTime? DeletionTime { get; set; }
+        public bool IsDeleted { get; set; }
         public AppStatus? Status
         {
             get

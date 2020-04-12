@@ -26,7 +26,7 @@ namespace EA.Application.WebApi.Controllers
     /// </summary>
     [ApiController]
     [Route("User")]
-    [Authorize(Roles = "Admin")]
+    //[Authorize(Roles = "Admin")]
     public class UserController : ApiBase<ApplicationUser, ApplicationUserDto, LanguageController>, IUserController
     {
         #region Variables
@@ -427,22 +427,17 @@ namespace EA.Application.WebApi.Controllers
             }
         }
 
-        /// <summary>
-        /// Kullanıcıya rol eklemek için kullanılan metot
-        /// </summary>
-        /// <param name="userid">Rolün ekleneceği kullanıcı Id si</param>
-        /// <param name="roleid">Kullanıcıya eklenecek rolün Id bilgisi</param>
-        /// <returns></returns>
+     
         [HttpPost("AddUserRoleAsync")]
-        public async Task<ApiResult> AddUserRoleAsync(Guid userid, Guid roleid)
+        public async Task<ApiResult> AddUserRoleAsync([FromBody] UserRoleModel userRole)
         {
             var identityResult = new IdentityResult();
             var sbErrors = new StringBuilder("Errors:");
             var roleManager = _service.GetService<RoleManager<ApplicationRole>>();
             try
             {
-                var user = await _userManager.FindByIdAsync(userid.ToString()).ConfigureAwait(false);
-                var role = await roleManager.FindByIdAsync(roleid.ToString()).ConfigureAwait(false);
+                var user = await _userManager.FindByIdAsync(userRole.User.ToString()).ConfigureAwait(false);
+                var role = await roleManager.FindByIdAsync(userRole.Role.ToString()).ConfigureAwait(false);
 
                 if (role != null)
                 {
@@ -461,13 +456,13 @@ namespace EA.Application.WebApi.Controllers
                     Data = $"IsSucceeded:{identityResult.Succeeded}"
                 };
 
-                _logger.LogInformation($"User Role Add to userid:{userid} role:{roleid} result:{result.Message}");
+                _logger.LogInformation($"User Role Add to userid:{userRole.User} role:{userRole.Role} result:{result.Message}");
 
                 return result;
             }
             catch (Exception ex)
             {
-                _logger.LogInformation($"User Role Add to userid:{userid} role:{roleid} result:Error - {ex.Message}");
+                _logger.LogInformation($"User Role Add to userid:{userRole.User} role:{userRole.Role} result:Error - {ex.Message}");
 
                 return new ApiResult
                 {

@@ -1,5 +1,9 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+using EA.Application.Common.Enttiy;
 using EA.Application.Data.Entitites;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -25,16 +29,15 @@ namespace EA.Application.Data.Context
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
-            //Loglama yapılması için gerekli komut
-            //this.EnsureAutoHistory();
+            this.EnsureAutoHistory();
         }
         #endregion
 
         #region ModelCreating
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //Loglamayı aktif hale getiriyoruz
             modelBuilder.EnableAutoHistory(int.MaxValue);
+            modelBuilder.Entity<ApplicationUserRole>().HasKey(p => new { p.UserId, p.RoleId });
         }
         #endregion
 
@@ -48,7 +51,26 @@ namespace EA.Application.Data.Context
             optionsBuilder.UseSqlServer(config.GetConnectionString("DefaultConnection"));
         }
         #endregion
-
+        public override Task<int> SaveChangesAsync(
+            bool acceptAllChangesOnSuccess,
+            CancellationToken cancellationToken = default(CancellationToken))
+        {
+            foreach (var auditableEntity in ChangeTracker.Entries<IFullAudited>())
+            {
+                if (auditableEntity.State == EntityState.Added ||
+                    auditableEntity.State == EntityState.Modified)
+                {
+                    auditableEntity.Entity.LastModificationTime = DateTime.Now;
+                    auditableEntity.Entity.LastModifierUserId=Guid.Empty;
+                    if (auditableEntity.State == EntityState.Added)
+                    {
+                        auditableEntity.Entity.CreateDate = DateTime.Now;
+                        auditableEntity.Entity.Creator=Guid.Empty;//Current User gelecek
+                    }
+                }
+            }
+            return base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
+        }
         #region DbSets
         /// <summary>
         /// Projemiz içerisinde kullanacağımız tüm entity sınıflarımızın bu kısımda DbSet ile tanımlıyoruz

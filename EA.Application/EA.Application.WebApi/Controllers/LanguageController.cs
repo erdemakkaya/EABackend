@@ -15,12 +15,10 @@ using Microsoft.AspNetCore.Mvc;
 namespace EA.Application.WebApi.Controllers
 {
 
-    /// <summary>
-    /// diller tablosu ile ilgili işlemleri içeren sınıf
-    /// </summary>
-   //[Authorize( AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+  
     [ApiController]
-    [Route("Language")]
+    [Route("lang")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class LanguageController : ApiBase<Language, LanguageDto, LanguageController>, ILanguageController
     {
         #region Constructor

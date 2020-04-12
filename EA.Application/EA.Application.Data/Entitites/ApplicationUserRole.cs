@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using EA.Application.Common.Enttiy;
 using EA.Application.Common.Enums;
 using Microsoft.AspNetCore.Identity;
@@ -10,14 +11,18 @@ namespace EA.Application.Data.Entitites
     /// </summary>
     public class ApplicationUserRole : IdentityUserRole<Guid>, IEntity
     {
+        public ApplicationUserRole()
+        {
+            if (Id==Guid.Empty)
+            {
+                Id=Guid.NewGuid();
+            }
+        }
         private AppStatus status;
         private DateTime createdDate;
 
+        [Key]
         public Guid Id { get; set; }
-
-        /// <summary>
-        /// Kullanıcı bilgisi
-        /// </summary>
         public virtual ApplicationUser User { get; set; }
 
         /// <summary>

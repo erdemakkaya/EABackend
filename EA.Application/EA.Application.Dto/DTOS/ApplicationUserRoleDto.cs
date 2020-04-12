@@ -7,7 +7,6 @@ namespace EA.Application.Dto.DTOS
 {
     public class ApplicationUserRoleDto
     {
-        public Guid Id { get; set; }
         /// <summary>
         /// Kullanıcı bilgisi
         /// </summary>

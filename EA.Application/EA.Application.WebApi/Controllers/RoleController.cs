@@ -23,9 +23,7 @@ namespace EA.Application.WebApi.Controllers
     public class RoleController: ApiBase<ApplicationRole, ApplicationRoleDto, RoleController>, IRoleController
     {
         #region Variables
-        /// <summary>
-        /// Identity alt yapısı içerisinde bulunan UserManager sınıfı ile kullanıcı işlemlerini yapacağız.
-        /// </summary>
+       
         private readonly RoleManager<ApplicationRole> _roleManager;
 
         private readonly IMapper _mapper;

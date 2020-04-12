@@ -1,0 +1,821 @@
+2020-04-12 16:27:00.598 +03:00 [Information] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager: User profile is available. Using 'C:\Users\ABS\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-04-12 16:27:01.153 +03:00 [Information] Microsoft.Hosting.Lifetime: Application started. Press Ctrl+C to shut down.
+2020-04-12 16:27:01.161 +03:00 [Information] Microsoft.Hosting.Lifetime: Hosting environment: Development
+2020-04-12 16:27:01.165 +03:00 [Information] Microsoft.Hosting.Lifetime: Content root path: D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.WebApi
+2020-04-12 16:27:01.264 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/  
+2020-04-12 16:27:01.310 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: No cached response available for this request.
+2020-04-12 16:27:01.614 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2020-04-12 16:27:01.665 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 407.25030000000004ms 404 text/plain
+2020-04-12 16:27:02.415 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/favicon.ico  
+2020-04-12 16:27:02.482 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: No cached response available for this request.
+2020-04-12 16:27:02.489 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2020-04-12 16:27:02.494 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 78.5878ms 404 text/plain
+2020-04-12 16:27:54.792 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 POST http://localhost:51494/User/AddAsync application/json 246
+2020-04-12 16:27:54.850 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Route matched with {action = "Add", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[EA.Application.Common.Api.ApiResult`1[EA.Application.Dto.DTOS.ApplicationUserDto]] AddAsync(EA.Application.Dto.DTOS.ApplicationUserDto) on controller EA.Application.WebApi.Controllers.UserController (EA.Application.WebApi).
+2020-04-12 16:27:55.854 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 16:27:55.895 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 16:27:56.812 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__normalizedUserName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreateDate], [u].[Creator], [u].[DeleterUserId], [u].[DeletionTime], [u].[Email], [u].[EmailConfirmed], [u].[IsDeleted], [u].[LanguageId], [u].[LastModificationTime], [u].[LastModifierUserId], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[Title], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE (([u].[NormalizedUserName] = @__normalizedUserName_0) AND ([u].[NormalizedUserName] IS NOT NULL AND @__normalizedUserName_0 IS NOT NULL)) OR ([u].[NormalizedUserName] IS NULL AND @__normalizedUserName_0 IS NULL)
+2020-04-12 16:27:56.993 +03:00 [Error] Microsoft.EntityFrameworkCore.Database.Command: Failed executing DbCommand (187ms) [Parameters=[@__normalizedUserName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreateDate], [u].[Creator], [u].[DeleterUserId], [u].[DeletionTime], [u].[Email], [u].[EmailConfirmed], [u].[IsDeleted], [u].[LanguageId], [u].[LastModificationTime], [u].[LastModifierUserId], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[Title], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE (([u].[NormalizedUserName] = @__normalizedUserName_0) AND ([u].[NormalizedUserName] IS NOT NULL AND @__normalizedUserName_0 IS NOT NULL)) OR ([u].[NormalizedUserName] IS NULL AND @__normalizedUserName_0 IS NULL)
+2020-04-12 16:27:57.141 +03:00 [Error] Microsoft.EntityFrameworkCore.Query: An exception occurred while iterating over the results of a query for context type 'EA.Application.Data.Context.ApplicationDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'DeleterUserId'.
+Invalid column name 'DeletionTime'.
+Invalid column name 'IsDeleted'.
+Invalid column name 'LastModificationTime'.
+Invalid column name 'LastModifierUserId'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.RelationalShapedQueryCompilingExpressionVisitor.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:b6fd4f8e-6a3d-4704-8e9f-032cafe7f1a3
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'DeleterUserId'.
+Invalid column name 'DeletionTime'.
+Invalid column name 'IsDeleted'.
+Invalid column name 'LastModificationTime'.
+Invalid column name 'LastModifierUserId'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.RelationalShapedQueryCompilingExpressionVisitor.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:b6fd4f8e-6a3d-4704-8e9f-032cafe7f1a3
+Error Number:207,State:1,Class:16
+2020-04-12 16:27:57.313 +03:00 [Error] EA.Application.WebApi.Controllers.LanguageController: User Add : mail:test@test.com.tr username:testuser1 result:Error - Invalid column name 'DeleterUserId'.
+Invalid column name 'DeletionTime'.
+Invalid column name 'IsDeleted'.
+Invalid column name 'LastModificationTime'.
+Invalid column name 'LastModifierUserId'.
+2020-04-12 16:27:57.327 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor: Executing ObjectResult, writing value of type 'EA.Application.Common.Api.ApiResult`1[[EA.Application.Dto.DTOS.ApplicationUserDto, EA.Application.Dto, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-04-12 16:27:57.351 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Executed action EA.Application.WebApi.Controllers.UserController.AddAsync (EA.Application.WebApi) in 2492.3064ms
+2020-04-12 16:27:57.364 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 2573.4539ms 200 application/json; charset=utf-8
+2020-04-12 16:30:46.345 +03:00 [Information] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager: User profile is available. Using 'C:\Users\ABS\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-04-12 16:30:46.574 +03:00 [Information] Microsoft.Hosting.Lifetime: Application started. Press Ctrl+C to shut down.
+2020-04-12 16:30:46.596 +03:00 [Information] Microsoft.Hosting.Lifetime: Hosting environment: Development
+2020-04-12 16:30:46.601 +03:00 [Information] Microsoft.Hosting.Lifetime: Content root path: D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.WebApi
+2020-04-12 16:30:46.629 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/  
+2020-04-12 16:30:46.654 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: No cached response available for this request.
+2020-04-12 16:30:46.769 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2020-04-12 16:30:46.805 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 179.26170000000002ms 404 text/plain
+2020-04-12 16:32:41.009 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 POST http://localhost:51494/User/AddAsync application/json 243
+2020-04-12 16:32:41.087 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Route matched with {action = "Add", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[EA.Application.Common.Api.ApiResult`1[EA.Application.Dto.DTOS.ApplicationUserDto]] AddAsync(EA.Application.Dto.DTOS.ApplicationUserDto) on controller EA.Application.WebApi.Controllers.UserController (EA.Application.WebApi).
+2020-04-12 16:32:41.817 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 16:32:41.830 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 16:32:42.880 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__normalizedUserName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreateDate], [u].[Creator], [u].[DeleterUserId], [u].[DeletionTime], [u].[Email], [u].[EmailConfirmed], [u].[IsDeleted], [u].[LanguageId], [u].[LastModificationTime], [u].[LastModifierUserId], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[Title], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE (([u].[NormalizedUserName] = @__normalizedUserName_0) AND ([u].[NormalizedUserName] IS NOT NULL AND @__normalizedUserName_0 IS NOT NULL)) OR ([u].[NormalizedUserName] IS NULL AND @__normalizedUserName_0 IS NULL)
+2020-04-12 16:32:42.960 +03:00 [Error] Microsoft.EntityFrameworkCore.Database.Command: Failed executing DbCommand (82ms) [Parameters=[@__normalizedUserName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreateDate], [u].[Creator], [u].[DeleterUserId], [u].[DeletionTime], [u].[Email], [u].[EmailConfirmed], [u].[IsDeleted], [u].[LanguageId], [u].[LastModificationTime], [u].[LastModifierUserId], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[Title], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE (([u].[NormalizedUserName] = @__normalizedUserName_0) AND ([u].[NormalizedUserName] IS NOT NULL AND @__normalizedUserName_0 IS NOT NULL)) OR ([u].[NormalizedUserName] IS NULL AND @__normalizedUserName_0 IS NULL)
+2020-04-12 16:32:43.020 +03:00 [Error] Microsoft.EntityFrameworkCore.Query: An exception occurred while iterating over the results of a query for context type 'EA.Application.Data.Context.ApplicationDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'DeleterUserId'.
+Invalid column name 'DeletionTime'.
+Invalid column name 'IsDeleted'.
+Invalid column name 'LastModificationTime'.
+Invalid column name 'LastModifierUserId'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.RelationalShapedQueryCompilingExpressionVisitor.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:73a5f315-dc87-4194-a56d-7daa8fdca8fb
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'DeleterUserId'.
+Invalid column name 'DeletionTime'.
+Invalid column name 'IsDeleted'.
+Invalid column name 'LastModificationTime'.
+Invalid column name 'LastModifierUserId'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.RelationalShapedQueryCompilingExpressionVisitor.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:73a5f315-dc87-4194-a56d-7daa8fdca8fb
+Error Number:207,State:1,Class:16
+2020-04-12 16:32:43.121 +03:00 [Error] EA.Application.WebApi.Controllers.LanguageController: User Add : mail:erdem@test.com.tr username:erdem result:Error - Invalid column name 'DeleterUserId'.
+Invalid column name 'DeletionTime'.
+Invalid column name 'IsDeleted'.
+Invalid column name 'LastModificationTime'.
+Invalid column name 'LastModifierUserId'.
+2020-04-12 16:32:43.131 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor: Executing ObjectResult, writing value of type 'EA.Application.Common.Api.ApiResult`1[[EA.Application.Dto.DTOS.ApplicationUserDto, EA.Application.Dto, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-04-12 16:32:43.145 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Executed action EA.Application.WebApi.Controllers.UserController.AddAsync (EA.Application.WebApi) in 2050.92ms
+2020-04-12 16:32:43.155 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 2146.2944ms 200 application/json; charset=utf-8
+2020-04-12 16:37:18.009 +03:00 [Information] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager: User profile is available. Using 'C:\Users\ABS\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-04-12 16:37:18.279 +03:00 [Information] Microsoft.Hosting.Lifetime: Application started. Press Ctrl+C to shut down.
+2020-04-12 16:37:18.295 +03:00 [Information] Microsoft.Hosting.Lifetime: Hosting environment: Development
+2020-04-12 16:37:18.301 +03:00 [Information] Microsoft.Hosting.Lifetime: Content root path: D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.WebApi
+2020-04-12 16:37:18.323 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/  
+2020-04-12 16:37:18.351 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: No cached response available for this request.
+2020-04-12 16:37:18.474 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2020-04-12 16:37:18.501 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 181.6434ms 404 text/plain
+2020-04-12 16:39:43.140 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 POST http://localhost:51494/User/AddAsync application/json 243
+2020-04-12 16:39:43.210 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Route matched with {action = "Add", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[EA.Application.Common.Api.ApiResult`1[EA.Application.Dto.DTOS.ApplicationUserDto]] AddAsync(EA.Application.Dto.DTOS.ApplicationUserDto) on controller EA.Application.WebApi.Controllers.UserController (EA.Application.WebApi).
+2020-04-12 16:39:43.916 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 16:39:43.932 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 16:39:45.076 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__normalizedUserName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreateDate], [u].[Creator], [u].[DeleterUserId], [u].[DeletionTime], [u].[Email], [u].[EmailConfirmed], [u].[IsDeleted], [u].[LanguageId], [u].[LastModificationTime], [u].[LastModifierUserId], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[Title], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE (([u].[NormalizedUserName] = @__normalizedUserName_0) AND ([u].[NormalizedUserName] IS NOT NULL AND @__normalizedUserName_0 IS NOT NULL)) OR ([u].[NormalizedUserName] IS NULL AND @__normalizedUserName_0 IS NULL)
+2020-04-12 16:39:45.199 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__normalizedEmail_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreateDate], [u].[Creator], [u].[DeleterUserId], [u].[DeletionTime], [u].[Email], [u].[EmailConfirmed], [u].[IsDeleted], [u].[LanguageId], [u].[LastModificationTime], [u].[LastModifierUserId], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[Title], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE (([u].[NormalizedEmail] = @__normalizedEmail_0) AND ([u].[NormalizedEmail] IS NOT NULL AND @__normalizedEmail_0 IS NOT NULL)) OR ([u].[NormalizedEmail] IS NULL AND @__normalizedEmail_0 IS NULL)
+2020-04-12 16:39:45.454 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Guid), @p5='?' (DbType = Int64), @p6='?' (DbType = DateTime2), @p7='?' (Size = 4000), @p8='?' (DbType = Boolean), @p9='?' (DbType = Boolean), @p10='?' (DbType = Guid), @p11='?' (DbType = DateTime2), @p12='?' (DbType = Guid), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTimeOffset), @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (Size = 4000), @p19='?' (DbType = Boolean), @p20='?' (Size = 4000), @p21='?' (DbType = Int32), @p22='?' (Size = 4000), @p23='?' (DbType = Boolean), @p24='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Id], [AccessFailedCount], [ConcurrencyStamp], [CreateDate], [Creator], [DeleterUserId], [DeletionTime], [Email], [EmailConfirmed], [IsDeleted], [LanguageId], [LastModificationTime], [LastModifierUserId], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [Status], [Title], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24);
+2020-04-12 16:39:45.580 +03:00 [Error] Microsoft.EntityFrameworkCore.Database.Command: Failed executing DbCommand (115ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Guid), @p5='?' (DbType = Int64), @p6='?' (DbType = DateTime2), @p7='?' (Size = 4000), @p8='?' (DbType = Boolean), @p9='?' (DbType = Boolean), @p10='?' (DbType = Guid), @p11='?' (DbType = DateTime2), @p12='?' (DbType = Guid), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTimeOffset), @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (Size = 4000), @p19='?' (DbType = Boolean), @p20='?' (Size = 4000), @p21='?' (DbType = Int32), @p22='?' (Size = 4000), @p23='?' (DbType = Boolean), @p24='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Id], [AccessFailedCount], [ConcurrencyStamp], [CreateDate], [Creator], [DeleterUserId], [DeletionTime], [Email], [EmailConfirmed], [IsDeleted], [LanguageId], [LastModificationTime], [LastModifierUserId], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [Status], [Title], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24);
+2020-04-12 16:39:45.683 +03:00 [Error] Microsoft.EntityFrameworkCore.Update: An exception occurred in the database while saving changes for context type 'EA.Application.Data.Context.ApplicationDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Users_Languages_LanguageId". The conflict occurred in database "ApplicationDB", table "dbo.Languages", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:8d60fb5e-ad89-4161-aaf9-094be05c57ed
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Users_Languages_LanguageId". The conflict occurred in database "ApplicationDB", table "dbo.Languages", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:8d60fb5e-ad89-4161-aaf9-094be05c57ed
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2020-04-12 16:39:45.787 +03:00 [Error] EA.Application.WebApi.Controllers.LanguageController: User Add : mail:erdem@test.com.tr username:erdem result:Error - An error occurred while updating the entries. See the inner exception for details.
+2020-04-12 16:39:45.797 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor: Executing ObjectResult, writing value of type 'EA.Application.Common.Api.ApiResult`1[[EA.Application.Dto.DTOS.ApplicationUserDto, EA.Application.Dto, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-04-12 16:39:45.813 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Executed action EA.Application.WebApi.Controllers.UserController.AddAsync (EA.Application.WebApi) in 2593.9439ms
+2020-04-12 16:39:45.821 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 2683.3994000000002ms 200 application/json; charset=utf-8
+2020-04-12 17:44:33.628 +03:00 [Information] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager: User profile is available. Using 'C:\Users\ABS\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-04-12 17:44:33.831 +03:00 [Information] Microsoft.Hosting.Lifetime: Application started. Press Ctrl+C to shut down.
+2020-04-12 17:44:33.844 +03:00 [Information] Microsoft.Hosting.Lifetime: Hosting environment: Development
+2020-04-12 17:44:33.846 +03:00 [Information] Microsoft.Hosting.Lifetime: Content root path: D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.WebApi
+2020-04-12 17:44:33.865 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/  
+2020-04-12 17:44:33.890 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: No cached response available for this request.
+2020-04-12 17:44:34.024 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2020-04-12 17:44:34.051 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 188.061ms 404 text/plain
+2020-04-12 17:44:34.511 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/favicon.ico  
+2020-04-12 17:44:34.532 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: No cached response available for this request.
+2020-04-12 17:44:34.546 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2020-04-12 17:44:34.575 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 40.6593ms 404 text/plain
+2020-04-12 17:53:28.406 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 POST http://localhost:51494/User/AddAsync application/json 243
+2020-04-12 17:53:28.448 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Route matched with {action = "Add", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[EA.Application.Common.Api.ApiResult`1[EA.Application.Dto.DTOS.ApplicationUserDto]] AddAsync(EA.Application.Dto.DTOS.ApplicationUserDto) on controller EA.Application.WebApi.Controllers.UserController (EA.Application.WebApi).
+2020-04-12 17:53:29.187 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 17:53:29.212 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 17:54:40.334 +03:00 [Information] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager: User profile is available. Using 'C:\Users\ABS\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-04-12 17:54:40.566 +03:00 [Information] Microsoft.Hosting.Lifetime: Application started. Press Ctrl+C to shut down.
+2020-04-12 17:54:40.577 +03:00 [Information] Microsoft.Hosting.Lifetime: Hosting environment: Development
+2020-04-12 17:54:40.580 +03:00 [Information] Microsoft.Hosting.Lifetime: Content root path: D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.WebApi
+2020-04-12 17:54:40.607 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/  
+2020-04-12 17:54:40.636 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: No cached response available for this request.
+2020-04-12 17:54:40.757 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2020-04-12 17:54:40.802 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 193.60150000000002ms 404 text/plain
+2020-04-12 17:54:41.359 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/favicon.ico  
+2020-04-12 17:54:41.363 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: No cached response available for this request.
+2020-04-12 17:54:41.366 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2020-04-12 17:54:41.370 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 11.2033ms 404 text/plain
+2020-04-12 17:54:46.561 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 POST http://localhost:51494/User/AddAsync application/json 243
+2020-04-12 17:54:46.603 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Route matched with {action = "Add", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[EA.Application.Common.Api.ApiResult`1[EA.Application.Dto.DTOS.ApplicationUserDto]] AddAsync(EA.Application.Dto.DTOS.ApplicationUserDto) on controller EA.Application.WebApi.Controllers.UserController (EA.Application.WebApi).
+2020-04-12 17:54:47.306 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 17:54:47.324 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 17:55:59.735 +03:00 [Information] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager: User profile is available. Using 'C:\Users\ABS\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-04-12 17:55:59.977 +03:00 [Information] Microsoft.Hosting.Lifetime: Application started. Press Ctrl+C to shut down.
+2020-04-12 17:56:00.014 +03:00 [Information] Microsoft.Hosting.Lifetime: Hosting environment: Development
+2020-04-12 17:56:00.017 +03:00 [Information] Microsoft.Hosting.Lifetime: Content root path: D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.WebApi
+2020-04-12 17:56:00.053 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/  
+2020-04-12 17:56:00.081 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: No cached response available for this request.
+2020-04-12 17:56:00.222 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2020-04-12 17:56:00.260 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 207.2674ms 404 text/plain
+2020-04-12 17:56:00.834 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/favicon.ico  
+2020-04-12 17:56:00.841 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: No cached response available for this request.
+2020-04-12 17:56:00.844 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2020-04-12 17:56:00.852 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 17.061500000000002ms 404 text/plain
+2020-04-12 17:56:01.747 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 POST http://localhost:51494/Language/Add application/json 40
+2020-04-12 17:56:01.785 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Route matched with {action = "Add", controller = "Language"}. Executing controller action with signature EA.Application.Common.Api.ApiResult`1[EA.Application.Dto.DTOS.LanguageDto] Add(EA.Application.Dto.DTOS.LanguageDto) on controller EA.Application.WebApi.Controllers.LanguageController (EA.Application.WebApi).
+2020-04-12 17:56:02.459 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 17:56:02.501 +03:00 [Information] EA.Application.WebApi.Controllers.LanguageController: GetQueryable from the EA.Application.Data.Entitites.Language table
+2020-04-12 17:56:02.936 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__culture_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [l].[Id], [l].[CreateDate], [l].[Creator], [l].[Culture], [l].[Name], [l].[Status]
+FROM [Languages] AS [l]
+WHERE ([l].[Culture] = @__culture_0) AND @__culture_0 IS NOT NULL
+2020-04-12 17:56:03.095 +03:00 [Information] EA.Application.WebApi.Controllers.LanguageController: Add record to the EA.Application.Data.Entitites.Language table. Data: - Name : English - , - Culture : en-GBs - , - Id : 00000000-0000-0000-0000-000000000000 - , - CreateDate :  - , - Creator :  - , - Status :  - 
+2020-04-12 17:56:03.168 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Guid), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Languages] ([Id], [CreateDate], [Creator], [Culture], [Name], [Status])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2020-04-12 17:56:03.356 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor: Executing ObjectResult, writing value of type 'EA.Application.Common.Api.ApiResult`1[[EA.Application.Dto.DTOS.LanguageDto, EA.Application.Dto, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-04-12 17:56:03.379 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Executed action EA.Application.WebApi.Controllers.LanguageController.Add (EA.Application.WebApi) in 1584.6336000000001ms
+2020-04-12 17:56:03.385 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 1643.0385ms 200 application/json; charset=utf-8
+2020-04-12 17:56:13.563 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 POST http://localhost:51494/Language/Add application/json 39
+2020-04-12 17:56:13.569 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Route matched with {action = "Add", controller = "Language"}. Executing controller action with signature EA.Application.Common.Api.ApiResult`1[EA.Application.Dto.DTOS.LanguageDto] Add(EA.Application.Dto.DTOS.LanguageDto) on controller EA.Application.WebApi.Controllers.LanguageController (EA.Application.WebApi).
+2020-04-12 17:56:13.600 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 17:56:13.607 +03:00 [Information] EA.Application.WebApi.Controllers.LanguageController: GetQueryable from the EA.Application.Data.Entitites.Language table
+2020-04-12 17:56:13.614 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__culture_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [l].[Id], [l].[CreateDate], [l].[Creator], [l].[Culture], [l].[Name], [l].[Status]
+FROM [Languages] AS [l]
+WHERE ([l].[Culture] = @__culture_0) AND @__culture_0 IS NOT NULL
+2020-04-12 17:56:13.626 +03:00 [Information] EA.Application.WebApi.Controllers.LanguageController: Add record to the EA.Application.Data.Entitites.Language table. Data: - Name : Turkish - , - Culture : tr-TR - , - Id : 00000000-0000-0000-0000-000000000000 - , - CreateDate :  - , - Creator :  - , - Status :  - 
+2020-04-12 17:56:13.630 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Guid), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Languages] ([Id], [CreateDate], [Creator], [Culture], [Name], [Status])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2020-04-12 17:56:13.635 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor: Executing ObjectResult, writing value of type 'EA.Application.Common.Api.ApiResult`1[[EA.Application.Dto.DTOS.LanguageDto, EA.Application.Dto, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-04-12 17:56:13.642 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Executed action EA.Application.WebApi.Controllers.LanguageController.Add (EA.Application.WebApi) in 68.42580000000001ms
+2020-04-12 17:56:13.649 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 84.4265ms 200 application/json; charset=utf-8
+2020-04-12 17:56:37.999 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 POST http://localhost:51494/User/AddAsync application/json 243
+2020-04-12 17:56:38.009 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Route matched with {action = "Add", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[EA.Application.Common.Api.ApiResult`1[EA.Application.Dto.DTOS.ApplicationUserDto]] AddAsync(EA.Application.Dto.DTOS.ApplicationUserDto) on controller EA.Application.WebApi.Controllers.UserController (EA.Application.WebApi).
+2020-04-12 17:56:38.050 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 17:56:38.060 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 17:56:41.291 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__normalizedUserName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreateDate], [u].[Creator], [u].[DeleterUserId], [u].[DeletionTime], [u].[Email], [u].[EmailConfirmed], [u].[IsDeleted], [u].[LanguageId], [u].[LastModificationTime], [u].[LastModifierUserId], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[Title], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE (([u].[NormalizedUserName] = @__normalizedUserName_0) AND ([u].[NormalizedUserName] IS NOT NULL AND @__normalizedUserName_0 IS NOT NULL)) OR ([u].[NormalizedUserName] IS NULL AND @__normalizedUserName_0 IS NULL)
+2020-04-12 17:56:41.336 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__normalizedEmail_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreateDate], [u].[Creator], [u].[DeleterUserId], [u].[DeletionTime], [u].[Email], [u].[EmailConfirmed], [u].[IsDeleted], [u].[LanguageId], [u].[LastModificationTime], [u].[LastModifierUserId], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[Title], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE (([u].[NormalizedEmail] = @__normalizedEmail_0) AND ([u].[NormalizedEmail] IS NOT NULL AND @__normalizedEmail_0 IS NOT NULL)) OR ([u].[NormalizedEmail] IS NULL AND @__normalizedEmail_0 IS NULL)
+2020-04-12 17:56:41.414 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Guid), @p5='?' (DbType = Int64), @p6='?' (DbType = DateTime2), @p7='?' (Size = 4000), @p8='?' (DbType = Boolean), @p9='?' (DbType = Boolean), @p10='?' (DbType = Guid), @p11='?' (DbType = DateTime2), @p12='?' (DbType = Guid), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTimeOffset), @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (Size = 4000), @p19='?' (DbType = Boolean), @p20='?' (Size = 4000), @p21='?' (DbType = Int32), @p22='?' (Size = 4000), @p23='?' (DbType = Boolean), @p24='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Id], [AccessFailedCount], [ConcurrencyStamp], [CreateDate], [Creator], [DeleterUserId], [DeletionTime], [Email], [EmailConfirmed], [IsDeleted], [LanguageId], [LastModificationTime], [LastModifierUserId], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [Status], [Title], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24);
+2020-04-12 17:56:41.439 +03:00 [Error] Microsoft.EntityFrameworkCore.Database.Command: Failed executing DbCommand (11ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Guid), @p5='?' (DbType = Int64), @p6='?' (DbType = DateTime2), @p7='?' (Size = 4000), @p8='?' (DbType = Boolean), @p9='?' (DbType = Boolean), @p10='?' (DbType = Guid), @p11='?' (DbType = DateTime2), @p12='?' (DbType = Guid), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTimeOffset), @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (Size = 4000), @p19='?' (DbType = Boolean), @p20='?' (Size = 4000), @p21='?' (DbType = Int32), @p22='?' (Size = 4000), @p23='?' (DbType = Boolean), @p24='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Id], [AccessFailedCount], [ConcurrencyStamp], [CreateDate], [Creator], [DeleterUserId], [DeletionTime], [Email], [EmailConfirmed], [IsDeleted], [LanguageId], [LastModificationTime], [LastModifierUserId], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [Status], [Title], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24);
+2020-04-12 17:56:41.504 +03:00 [Error] Microsoft.EntityFrameworkCore.Update: An exception occurred in the database while saving changes for context type 'EA.Application.Data.Context.ApplicationDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Users_Languages_LanguageId". The conflict occurred in database "ApplicationDB", table "dbo.Languages", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:d26d0a58-cea2-47ee-b181-57c03be2f4c5
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Users_Languages_LanguageId". The conflict occurred in database "ApplicationDB", table "dbo.Languages", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:d26d0a58-cea2-47ee-b181-57c03be2f4c5
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2020-04-12 17:56:41.608 +03:00 [Error] EA.Application.WebApi.Controllers.LanguageController: User Add : mail:erdem@test.com.tr username:erdem result:Error - An error occurred while updating the entries. See the inner exception for details.
+2020-04-12 17:56:41.615 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor: Executing ObjectResult, writing value of type 'EA.Application.Common.Api.ApiResult`1[[EA.Application.Dto.DTOS.ApplicationUserDto, EA.Application.Dto, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-04-12 17:56:41.621 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Executed action EA.Application.WebApi.Controllers.UserController.AddAsync (EA.Application.WebApi) in 3609.0177000000003ms
+2020-04-12 17:56:41.630 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 3629.7595ms 200 application/json; charset=utf-8
+2020-04-12 17:57:07.311 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 POST http://localhost:51494/User/AddAsync application/json 243
+2020-04-12 17:57:07.315 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Route matched with {action = "Add", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[EA.Application.Common.Api.ApiResult`1[EA.Application.Dto.DTOS.ApplicationUserDto]] AddAsync(EA.Application.Dto.DTOS.ApplicationUserDto) on controller EA.Application.WebApi.Controllers.UserController (EA.Application.WebApi).
+2020-04-12 17:57:07.323 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 17:57:07.335 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 17:57:08.896 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__normalizedUserName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreateDate], [u].[Creator], [u].[DeleterUserId], [u].[DeletionTime], [u].[Email], [u].[EmailConfirmed], [u].[IsDeleted], [u].[LanguageId], [u].[LastModificationTime], [u].[LastModifierUserId], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[Title], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE (([u].[NormalizedUserName] = @__normalizedUserName_0) AND ([u].[NormalizedUserName] IS NOT NULL AND @__normalizedUserName_0 IS NOT NULL)) OR ([u].[NormalizedUserName] IS NULL AND @__normalizedUserName_0 IS NULL)
+2020-04-12 17:57:08.907 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__normalizedEmail_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreateDate], [u].[Creator], [u].[DeleterUserId], [u].[DeletionTime], [u].[Email], [u].[EmailConfirmed], [u].[IsDeleted], [u].[LanguageId], [u].[LastModificationTime], [u].[LastModifierUserId], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[Title], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE (([u].[NormalizedEmail] = @__normalizedEmail_0) AND ([u].[NormalizedEmail] IS NOT NULL AND @__normalizedEmail_0 IS NOT NULL)) OR ([u].[NormalizedEmail] IS NULL AND @__normalizedEmail_0 IS NULL)
+2020-04-12 17:57:08.916 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Guid), @p5='?' (DbType = Int64), @p6='?' (DbType = DateTime2), @p7='?' (Size = 4000), @p8='?' (DbType = Boolean), @p9='?' (DbType = Boolean), @p10='?' (DbType = Guid), @p11='?' (DbType = DateTime2), @p12='?' (DbType = Guid), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTimeOffset), @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (Size = 4000), @p19='?' (DbType = Boolean), @p20='?' (Size = 4000), @p21='?' (DbType = Int32), @p22='?' (Size = 4000), @p23='?' (DbType = Boolean), @p24='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Id], [AccessFailedCount], [ConcurrencyStamp], [CreateDate], [Creator], [DeleterUserId], [DeletionTime], [Email], [EmailConfirmed], [IsDeleted], [LanguageId], [LastModificationTime], [LastModifierUserId], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [Status], [Title], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24);
+2020-04-12 17:57:08.929 +03:00 [Information] EA.Application.WebApi.Controllers.LanguageController: GetQueryable from the EA.Application.Data.Entitites.ApplicationUser table
+2020-04-12 17:57:08.995 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreateDate], [u].[Creator], [u].[DeleterUserId], [u].[DeletionTime], [u].[Email], [u].[EmailConfirmed], [u].[IsDeleted], [u].[LanguageId], [u].[LastModificationTime], [u].[LastModifierUserId], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[Title], [u].[TwoFactorEnabled], [u].[UserName], [l].[Id], [l].[CreateDate], [l].[Creator], [l].[Culture], [l].[Name], [l].[Status]
+FROM [Users] AS [u]
+INNER JOIN [Languages] AS [l] ON [u].[LanguageId] = [l].[Id]
+WHERE ([u].[Id] = @__user_Id_0) AND @__user_Id_0 IS NOT NULL
+2020-04-12 17:57:09.038 +03:00 [Information] EA.Application.WebApi.Controllers.LanguageController: Add User with userid:8978024a-c1be-4967-6359-08d7def1b5b8 mail:erdem@test.com.tr username:erdem result:User Added Successfully.
+2020-04-12 17:57:09.041 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor: Executing ObjectResult, writing value of type 'EA.Application.Common.Api.ApiResult`1[[EA.Application.Dto.DTOS.ApplicationUserDto, EA.Application.Dto, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-04-12 17:57:09.048 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Executed action EA.Application.WebApi.Controllers.UserController.AddAsync (EA.Application.WebApi) in 1730.3963ms
+2020-04-12 17:57:09.051 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 1739.9223000000002ms 200 application/json; charset=utf-8
+2020-04-12 17:58:23.478 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 POST http://localhost:51494/User/AddAsync application/json 242
+2020-04-12 17:58:23.483 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Route matched with {action = "Add", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[EA.Application.Common.Api.ApiResult`1[EA.Application.Dto.DTOS.ApplicationUserDto]] AddAsync(EA.Application.Dto.DTOS.ApplicationUserDto) on controller EA.Application.WebApi.Controllers.UserController (EA.Application.WebApi).
+2020-04-12 17:58:23.488 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 17:58:23.495 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 17:58:24.925 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__normalizedUserName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreateDate], [u].[Creator], [u].[DeleterUserId], [u].[DeletionTime], [u].[Email], [u].[EmailConfirmed], [u].[IsDeleted], [u].[LanguageId], [u].[LastModificationTime], [u].[LastModifierUserId], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[Title], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE (([u].[NormalizedUserName] = @__normalizedUserName_0) AND ([u].[NormalizedUserName] IS NOT NULL AND @__normalizedUserName_0 IS NOT NULL)) OR ([u].[NormalizedUserName] IS NULL AND @__normalizedUserName_0 IS NULL)
+2020-04-12 17:58:25.317 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__normalizedEmail_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreateDate], [u].[Creator], [u].[DeleterUserId], [u].[DeletionTime], [u].[Email], [u].[EmailConfirmed], [u].[IsDeleted], [u].[LanguageId], [u].[LastModificationTime], [u].[LastModifierUserId], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[Title], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE (([u].[NormalizedEmail] = @__normalizedEmail_0) AND ([u].[NormalizedEmail] IS NOT NULL AND @__normalizedEmail_0 IS NOT NULL)) OR ([u].[NormalizedEmail] IS NULL AND @__normalizedEmail_0 IS NULL)
+2020-04-12 17:58:25.327 +03:00 [Warning] Microsoft.AspNetCore.Identity.UserManager: User (null) validation failed: DuplicateUserName.
+2020-04-12 17:58:25.330 +03:00 [Information] EA.Application.WebApi.Controllers.LanguageController: Add User with userid:00000000-0000-0000-0000-000000000000 mail:test@test.com.tr username:erdem result:Errors:DuplicateUserName
+2020-04-12 17:58:25.335 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor: Executing ObjectResult, writing value of type 'EA.Application.Common.Api.ApiResult`1[[EA.Application.Dto.DTOS.ApplicationUserDto, EA.Application.Dto, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-04-12 17:58:25.339 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Executed action EA.Application.WebApi.Controllers.UserController.AddAsync (EA.Application.WebApi) in 1853.3146000000002ms
+2020-04-12 17:58:25.342 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 1863.6224000000002ms 200 application/json; charset=utf-8
+2020-04-12 17:58:32.311 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 POST http://localhost:51494/User/AddAsync application/json 241
+2020-04-12 17:58:32.315 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Route matched with {action = "Add", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[EA.Application.Common.Api.ApiResult`1[EA.Application.Dto.DTOS.ApplicationUserDto]] AddAsync(EA.Application.Dto.DTOS.ApplicationUserDto) on controller EA.Application.WebApi.Controllers.UserController (EA.Application.WebApi).
+2020-04-12 17:58:32.325 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 17:58:32.330 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 17:58:37.197 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__normalizedUserName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreateDate], [u].[Creator], [u].[DeleterUserId], [u].[DeletionTime], [u].[Email], [u].[EmailConfirmed], [u].[IsDeleted], [u].[LanguageId], [u].[LastModificationTime], [u].[LastModifierUserId], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[Title], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE (([u].[NormalizedUserName] = @__normalizedUserName_0) AND ([u].[NormalizedUserName] IS NOT NULL AND @__normalizedUserName_0 IS NOT NULL)) OR ([u].[NormalizedUserName] IS NULL AND @__normalizedUserName_0 IS NULL)
+2020-04-12 17:58:37.209 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__normalizedEmail_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreateDate], [u].[Creator], [u].[DeleterUserId], [u].[DeletionTime], [u].[Email], [u].[EmailConfirmed], [u].[IsDeleted], [u].[LanguageId], [u].[LastModificationTime], [u].[LastModifierUserId], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[Title], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE (([u].[NormalizedEmail] = @__normalizedEmail_0) AND ([u].[NormalizedEmail] IS NOT NULL AND @__normalizedEmail_0 IS NOT NULL)) OR ([u].[NormalizedEmail] IS NULL AND @__normalizedEmail_0 IS NULL)
+2020-04-12 17:58:37.223 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Guid), @p5='?' (DbType = Int64), @p6='?' (DbType = DateTime2), @p7='?' (Size = 4000), @p8='?' (DbType = Boolean), @p9='?' (DbType = Boolean), @p10='?' (DbType = Guid), @p11='?' (DbType = DateTime2), @p12='?' (DbType = Guid), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTimeOffset), @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (Size = 4000), @p19='?' (DbType = Boolean), @p20='?' (Size = 4000), @p21='?' (DbType = Int32), @p22='?' (Size = 4000), @p23='?' (DbType = Boolean), @p24='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Id], [AccessFailedCount], [ConcurrencyStamp], [CreateDate], [Creator], [DeleterUserId], [DeletionTime], [Email], [EmailConfirmed], [IsDeleted], [LanguageId], [LastModificationTime], [LastModifierUserId], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [Status], [Title], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24);
+2020-04-12 17:58:37.232 +03:00 [Information] EA.Application.WebApi.Controllers.LanguageController: GetQueryable from the EA.Application.Data.Entitites.ApplicationUser table
+2020-04-12 17:58:37.237 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreateDate], [u].[Creator], [u].[DeleterUserId], [u].[DeletionTime], [u].[Email], [u].[EmailConfirmed], [u].[IsDeleted], [u].[LanguageId], [u].[LastModificationTime], [u].[LastModifierUserId], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[Title], [u].[TwoFactorEnabled], [u].[UserName], [l].[Id], [l].[CreateDate], [l].[Creator], [l].[Culture], [l].[Name], [l].[Status]
+FROM [Users] AS [u]
+INNER JOIN [Languages] AS [l] ON [u].[LanguageId] = [l].[Id]
+WHERE ([u].[Id] = @__user_Id_0) AND @__user_Id_0 IS NOT NULL
+2020-04-12 17:58:37.248 +03:00 [Information] EA.Application.WebApi.Controllers.LanguageController: Add User with userid:7e675208-b28e-4003-635a-08d7def1b5b8 mail:test@test.com.tr username:test result:User Added Successfully.
+2020-04-12 17:58:37.251 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor: Executing ObjectResult, writing value of type 'EA.Application.Common.Api.ApiResult`1[[EA.Application.Dto.DTOS.ApplicationUserDto, EA.Application.Dto, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-04-12 17:58:37.255 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Executed action EA.Application.WebApi.Controllers.UserController.AddAsync (EA.Application.WebApi) in 4937.6529ms
+2020-04-12 17:58:37.258 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 4947.5022ms 200 application/json; charset=utf-8
+2020-04-12 17:59:21.214 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 POST http://localhost:51494/Role/AddAsync application/json 44
+2020-04-12 17:59:21.230 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Route matched with {action = "Add", controller = "Role"}. Executing controller action with signature System.Threading.Tasks.Task`1[EA.Application.Common.Api.ApiResult`1[EA.Application.Dto.DTOS.ApplicationRoleDto]] AddAsync(EA.Application.Dto.DTOS.ApplicationRoleDto) on controller EA.Application.WebApi.Controllers.RoleController (EA.Application.WebApi).
+2020-04-12 17:59:21.236 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 17:59:21.245 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 17:59:21.272 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__normalizedName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreateDate], [r].[Creator], [r].[DeleterUserId], [r].[DeletionTime], [r].[Description], [r].[IsDeleted], [r].[LastModificationTime], [r].[LastModifierUserId], [r].[Name], [r].[NormalizedName], [r].[Status]
+FROM [Roles] AS [r]
+WHERE (([r].[NormalizedName] = @__normalizedName_0) AND ([r].[NormalizedName] IS NOT NULL AND @__normalizedName_0 IS NOT NULL)) OR ([r].[NormalizedName] IS NULL AND @__normalizedName_0 IS NULL)
+2020-04-12 17:59:21.385 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__normalizedName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreateDate], [r].[Creator], [r].[DeleterUserId], [r].[DeletionTime], [r].[Description], [r].[IsDeleted], [r].[LastModificationTime], [r].[LastModifierUserId], [r].[Name], [r].[NormalizedName], [r].[Status]
+FROM [Roles] AS [r]
+WHERE (([r].[NormalizedName] = @__normalizedName_0) AND ([r].[NormalizedName] IS NOT NULL AND @__normalizedName_0 IS NOT NULL)) OR ([r].[NormalizedName] IS NULL AND @__normalizedName_0 IS NULL)
+2020-04-12 17:59:21.414 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Guid), @p4='?' (DbType = Int64), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000), @p7='?' (DbType = Boolean), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Guid), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Roles] ([Id], [ConcurrencyStamp], [CreateDate], [Creator], [DeleterUserId], [DeletionTime], [Description], [IsDeleted], [LastModificationTime], [LastModifierUserId], [Name], [NormalizedName], [Status])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);
+2020-04-12 17:59:21.427 +03:00 [Information] EA.Application.WebApi.Controllers.RoleController: Add Role with roleId:51942486-4754-4985-8103-08d7def2151d role Name:Admin role Desc:Admin result:Role Added Successfully.
+2020-04-12 17:59:21.430 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor: Executing ObjectResult, writing value of type 'EA.Application.Common.Api.ApiResult`1[[EA.Application.Dto.DTOS.ApplicationRoleDto, EA.Application.Dto, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-04-12 17:59:21.435 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Executed action EA.Application.WebApi.Controllers.RoleController.AddAsync (EA.Application.WebApi) in 202.9506ms
+2020-04-12 17:59:21.439 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 225.1078ms 200 application/json; charset=utf-8
+2020-04-12 17:59:32.894 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 POST http://localhost:51494/Role/AddAsync application/json 54
+2020-04-12 17:59:32.898 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Route matched with {action = "Add", controller = "Role"}. Executing controller action with signature System.Threading.Tasks.Task`1[EA.Application.Common.Api.ApiResult`1[EA.Application.Dto.DTOS.ApplicationRoleDto]] AddAsync(EA.Application.Dto.DTOS.ApplicationRoleDto) on controller EA.Application.WebApi.Controllers.RoleController (EA.Application.WebApi).
+2020-04-12 17:59:32.904 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 17:59:32.909 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 17:59:32.916 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__normalizedName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreateDate], [r].[Creator], [r].[DeleterUserId], [r].[DeletionTime], [r].[Description], [r].[IsDeleted], [r].[LastModificationTime], [r].[LastModifierUserId], [r].[Name], [r].[NormalizedName], [r].[Status]
+FROM [Roles] AS [r]
+WHERE (([r].[NormalizedName] = @__normalizedName_0) AND ([r].[NormalizedName] IS NOT NULL AND @__normalizedName_0 IS NOT NULL)) OR ([r].[NormalizedName] IS NULL AND @__normalizedName_0 IS NULL)
+2020-04-12 17:59:32.926 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__normalizedName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreateDate], [r].[Creator], [r].[DeleterUserId], [r].[DeletionTime], [r].[Description], [r].[IsDeleted], [r].[LastModificationTime], [r].[LastModifierUserId], [r].[Name], [r].[NormalizedName], [r].[Status]
+FROM [Roles] AS [r]
+WHERE (([r].[NormalizedName] = @__normalizedName_0) AND ([r].[NormalizedName] IS NOT NULL AND @__normalizedName_0 IS NOT NULL)) OR ([r].[NormalizedName] IS NULL AND @__normalizedName_0 IS NULL)
+2020-04-12 17:59:32.933 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Guid), @p4='?' (DbType = Int64), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000), @p7='?' (DbType = Boolean), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Guid), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Roles] ([Id], [ConcurrencyStamp], [CreateDate], [Creator], [DeleterUserId], [DeletionTime], [Description], [IsDeleted], [LastModificationTime], [LastModifierUserId], [Name], [NormalizedName], [Status])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);
+2020-04-12 17:59:32.939 +03:00 [Information] EA.Application.WebApi.Controllers.RoleController: Add Role with roleId:422aaa75-7f59-43ea-8104-08d7def2151d role Name:Moderatör role Desc:Moderatör result:Role Added Successfully.
+2020-04-12 17:59:32.943 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor: Executing ObjectResult, writing value of type 'EA.Application.Common.Api.ApiResult`1[[EA.Application.Dto.DTOS.ApplicationRoleDto, EA.Application.Dto, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-04-12 17:59:32.947 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Executed action EA.Application.WebApi.Controllers.RoleController.AddAsync (EA.Application.WebApi) in 45.8431ms
+2020-04-12 17:59:32.951 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 56.5415ms 200 application/json; charset=utf-8
+2020-04-12 17:59:46.684 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 POST http://localhost:51494/Role/AddAsync application/json 56
+2020-04-12 17:59:46.687 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Route matched with {action = "Add", controller = "Role"}. Executing controller action with signature System.Threading.Tasks.Task`1[EA.Application.Common.Api.ApiResult`1[EA.Application.Dto.DTOS.ApplicationRoleDto]] AddAsync(EA.Application.Dto.DTOS.ApplicationRoleDto) on controller EA.Application.WebApi.Controllers.RoleController (EA.Application.WebApi).
+2020-04-12 17:59:46.692 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 17:59:46.700 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 17:59:46.707 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__normalizedName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreateDate], [r].[Creator], [r].[DeleterUserId], [r].[DeletionTime], [r].[Description], [r].[IsDeleted], [r].[LastModificationTime], [r].[LastModifierUserId], [r].[Name], [r].[NormalizedName], [r].[Status]
+FROM [Roles] AS [r]
+WHERE (([r].[NormalizedName] = @__normalizedName_0) AND ([r].[NormalizedName] IS NOT NULL AND @__normalizedName_0 IS NOT NULL)) OR ([r].[NormalizedName] IS NULL AND @__normalizedName_0 IS NULL)
+2020-04-12 17:59:46.716 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__normalizedName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreateDate], [r].[Creator], [r].[DeleterUserId], [r].[DeletionTime], [r].[Description], [r].[IsDeleted], [r].[LastModificationTime], [r].[LastModifierUserId], [r].[Name], [r].[NormalizedName], [r].[Status]
+FROM [Roles] AS [r]
+WHERE (([r].[NormalizedName] = @__normalizedName_0) AND ([r].[NormalizedName] IS NOT NULL AND @__normalizedName_0 IS NOT NULL)) OR ([r].[NormalizedName] IS NULL AND @__normalizedName_0 IS NULL)
+2020-04-12 17:59:46.722 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Guid), @p4='?' (DbType = Int64), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000), @p7='?' (DbType = Boolean), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Guid), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Roles] ([Id], [ConcurrencyStamp], [CreateDate], [Creator], [DeleterUserId], [DeletionTime], [Description], [IsDeleted], [LastModificationTime], [LastModifierUserId], [Name], [NormalizedName], [Status])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);
+2020-04-12 17:59:46.731 +03:00 [Information] EA.Application.WebApi.Controllers.RoleController: Add Role with roleId:fbffea73-4b2f-4d73-8105-08d7def2151d role Name:Super-Admin role Desc:Super-Admin result:Role Added Successfully.
+2020-04-12 17:59:46.734 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor: Executing ObjectResult, writing value of type 'EA.Application.Common.Api.ApiResult`1[[EA.Application.Dto.DTOS.ApplicationRoleDto, EA.Application.Dto, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-04-12 17:59:46.740 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Executed action EA.Application.WebApi.Controllers.RoleController.AddAsync (EA.Application.WebApi) in 48.8599ms
+2020-04-12 17:59:46.744 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 60.2226ms 200 application/json; charset=utf-8
+2020-04-12 18:01:02.259 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 POST http://localhost:51494/AddUserRoleAsync application/json 103
+2020-04-12 18:01:02.267 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 7.6378ms 404 text/plain
+2020-04-12 18:01:10.769 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 POST http://localhost:51494/User/AddUserRoleAsync application/json 103
+2020-04-12 18:01:10.778 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Route matched with {action = "AddUserRole", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[EA.Application.Common.Api.ApiResult] AddUserRoleAsync(EA.Application.WebApi.VM.UserRoleModel) on controller EA.Application.WebApi.Controllers.UserController (EA.Application.WebApi).
+2020-04-12 18:01:10.783 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 18:01:10.793 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 18:01:12.448 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreateDate], [u].[Creator], [u].[DeleterUserId], [u].[DeletionTime], [u].[Email], [u].[EmailConfirmed], [u].[IsDeleted], [u].[LanguageId], [u].[LastModificationTime], [u].[LastModifierUserId], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[Title], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE ([u].[Id] = @__p_0) AND @__p_0 IS NOT NULL
+2020-04-12 18:01:12.475 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__roleId_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreateDate], [r].[Creator], [r].[DeleterUserId], [r].[DeletionTime], [r].[Description], [r].[IsDeleted], [r].[LastModificationTime], [r].[LastModifierUserId], [r].[Name], [r].[NormalizedName], [r].[Status]
+FROM [Roles] AS [r]
+WHERE ([r].[Id] = @__roleId_0) AND @__roleId_0 IS NOT NULL
+2020-04-12 18:01:12.480 +03:00 [Information] EA.Application.WebApi.Controllers.LanguageController: User Role Add to userid:00000000-0000-0000-0000-000000000000 role:00000000-0000-0000-0000-000000000000 result:Errors:No Such Role!
+2020-04-12 18:01:12.483 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor: Executing ObjectResult, writing value of type 'EA.Application.Common.Api.ApiResult'.
+2020-04-12 18:01:12.488 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Executed action EA.Application.WebApi.Controllers.UserController.AddUserRoleAsync (EA.Application.WebApi) in 1708.1685ms
+2020-04-12 18:01:12.492 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 1722.8673000000001ms 200 application/json; charset=utf-8
+2020-04-12 18:01:23.142 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 POST http://localhost:51494/User/AddUserRoleAsync application/json 103
+2020-04-12 18:01:23.148 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Route matched with {action = "AddUserRole", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[EA.Application.Common.Api.ApiResult] AddUserRoleAsync(EA.Application.WebApi.VM.UserRoleModel) on controller EA.Application.WebApi.Controllers.UserController (EA.Application.WebApi).
+2020-04-12 18:01:23.155 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 18:01:23.163 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 18:01:24.494 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreateDate], [u].[Creator], [u].[DeleterUserId], [u].[DeletionTime], [u].[Email], [u].[EmailConfirmed], [u].[IsDeleted], [u].[LanguageId], [u].[LastModificationTime], [u].[LastModifierUserId], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[Title], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE ([u].[Id] = @__p_0) AND @__p_0 IS NOT NULL
+2020-04-12 18:01:24.508 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__roleId_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreateDate], [r].[Creator], [r].[DeleterUserId], [r].[DeletionTime], [r].[Description], [r].[IsDeleted], [r].[LastModificationTime], [r].[LastModifierUserId], [r].[Name], [r].[NormalizedName], [r].[Status]
+FROM [Roles] AS [r]
+WHERE ([r].[Id] = @__roleId_0) AND @__roleId_0 IS NOT NULL
+2020-04-12 18:01:24.514 +03:00 [Information] EA.Application.WebApi.Controllers.LanguageController: User Role Add to userid:00000000-0000-0000-0000-000000000000 role:00000000-0000-0000-0000-000000000000 result:Errors:No Such Role!
+2020-04-12 18:01:24.518 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor: Executing ObjectResult, writing value of type 'EA.Application.Common.Api.ApiResult'.
+2020-04-12 18:01:24.523 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Executed action EA.Application.WebApi.Controllers.UserController.AddUserRoleAsync (EA.Application.WebApi) in 1371.7884000000001ms
+2020-04-12 18:01:24.526 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 1384.0465000000002ms 200 application/json; charset=utf-8
+2020-04-12 18:01:44.345 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 POST http://localhost:51494/User/AddUserRoleAsync application/json 103
+2020-04-12 18:01:44.349 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Route matched with {action = "AddUserRole", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[EA.Application.Common.Api.ApiResult] AddUserRoleAsync(EA.Application.WebApi.VM.UserRoleModel) on controller EA.Application.WebApi.Controllers.UserController (EA.Application.WebApi).
+2020-04-12 18:01:44.354 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 18:01:44.365 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 18:01:45.913 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreateDate], [u].[Creator], [u].[DeleterUserId], [u].[DeletionTime], [u].[Email], [u].[EmailConfirmed], [u].[IsDeleted], [u].[LanguageId], [u].[LastModificationTime], [u].[LastModifierUserId], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[Title], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE ([u].[Id] = @__p_0) AND @__p_0 IS NOT NULL
+2020-04-12 18:01:45.928 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__roleId_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreateDate], [r].[Creator], [r].[DeleterUserId], [r].[DeletionTime], [r].[Description], [r].[IsDeleted], [r].[LastModificationTime], [r].[LastModifierUserId], [r].[Name], [r].[NormalizedName], [r].[Status]
+FROM [Roles] AS [r]
+WHERE ([r].[Id] = @__roleId_0) AND @__roleId_0 IS NOT NULL
+2020-04-12 18:01:45.933 +03:00 [Information] EA.Application.WebApi.Controllers.LanguageController: User Role Add to userid:00000000-0000-0000-0000-000000000000 role:00000000-0000-0000-0000-000000000000 result:Errors:No Such Role!
+2020-04-12 18:01:45.937 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor: Executing ObjectResult, writing value of type 'EA.Application.Common.Api.ApiResult'.
+2020-04-12 18:01:45.941 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Executed action EA.Application.WebApi.Controllers.UserController.AddUserRoleAsync (EA.Application.WebApi) in 1589.2635ms
+2020-04-12 18:01:45.946 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 1600.2205000000001ms 200 application/json; charset=utf-8
+2020-04-12 18:02:13.401 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 POST http://localhost:51494/User/AddUserRoleAsync application/json 103
+2020-04-12 18:02:13.405 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Route matched with {action = "AddUserRole", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[EA.Application.Common.Api.ApiResult] AddUserRoleAsync(EA.Application.WebApi.VM.UserRoleModel) on controller EA.Application.WebApi.Controllers.UserController (EA.Application.WebApi).
+2020-04-12 18:02:13.409 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 18:02:13.420 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 18:02:21.332 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreateDate], [u].[Creator], [u].[DeleterUserId], [u].[DeletionTime], [u].[Email], [u].[EmailConfirmed], [u].[IsDeleted], [u].[LanguageId], [u].[LastModificationTime], [u].[LastModifierUserId], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[Title], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE ([u].[Id] = @__p_0) AND @__p_0 IS NOT NULL
+2020-04-12 18:02:56.318 +03:00 [Information] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager: User profile is available. Using 'C:\Users\ABS\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-04-12 18:02:56.550 +03:00 [Information] Microsoft.Hosting.Lifetime: Application started. Press Ctrl+C to shut down.
+2020-04-12 18:02:56.559 +03:00 [Information] Microsoft.Hosting.Lifetime: Hosting environment: Development
+2020-04-12 18:02:56.562 +03:00 [Information] Microsoft.Hosting.Lifetime: Content root path: D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.WebApi
+2020-04-12 18:02:56.585 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/  
+2020-04-12 18:02:56.608 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: No cached response available for this request.
+2020-04-12 18:02:56.721 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2020-04-12 18:02:56.748 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 166.4293ms 404 text/plain
+2020-04-12 18:02:57.212 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/favicon.ico  
+2020-04-12 18:02:57.235 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: No cached response available for this request.
+2020-04-12 18:02:57.240 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2020-04-12 18:02:57.249 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 34.5309ms 404 text/plain
+2020-04-12 18:12:26.565 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 POST http://localhost:51494/User/AddUserRoleAsync application/json 99
+2020-04-12 18:12:26.613 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Route matched with {action = "AddUserRole", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[EA.Application.Common.Api.ApiResult] AddUserRoleAsync(EA.Application.WebApi.VM.UserRoleModel) on controller EA.Application.WebApi.Controllers.UserController (EA.Application.WebApi).
+2020-04-12 18:12:27.339 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 18:12:27.362 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 18:12:32.282 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreateDate], [u].[Creator], [u].[DeleterUserId], [u].[DeletionTime], [u].[Email], [u].[EmailConfirmed], [u].[IsDeleted], [u].[LanguageId], [u].[LastModificationTime], [u].[LastModifierUserId], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[Title], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE ([u].[Id] = @__p_0) AND @__p_0 IS NOT NULL
+2020-04-12 18:12:32.443 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__roleId_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreateDate], [r].[Creator], [r].[DeleterUserId], [r].[DeletionTime], [r].[Description], [r].[IsDeleted], [r].[LastModificationTime], [r].[LastModifierUserId], [r].[Name], [r].[NormalizedName], [r].[Status]
+FROM [Roles] AS [r]
+WHERE ([r].[Id] = @__roleId_0) AND @__roleId_0 IS NOT NULL
+2020-04-12 18:12:32.474 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__normalizedRoleName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[CreateDate], [r].[Creator], [r].[DeleterUserId], [r].[DeletionTime], [r].[Description], [r].[IsDeleted], [r].[LastModificationTime], [r].[LastModifierUserId], [r].[Name], [r].[NormalizedName], [r].[Status]
+FROM [Roles] AS [r]
+WHERE (([r].[NormalizedName] = @__normalizedRoleName_0) AND ([r].[NormalizedName] IS NOT NULL AND @__normalizedRoleName_0 IS NOT NULL)) OR ([r].[NormalizedName] IS NULL AND @__normalizedRoleName_0 IS NULL)
+2020-04-12 18:12:32.490 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__p_0='?' (DbType = Guid), @__p_1='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[RoleId], [u].[CreateDate], [u].[Creator], [u].[Id], [u].[Status]
+FROM [UserRoles] AS [u]
+WHERE (([u].[UserId] = @__p_0) AND @__p_0 IS NOT NULL) AND (([u].[RoleId] = @__p_1) AND @__p_1 IS NOT NULL)
+2020-04-12 18:12:32.501 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__normalizedRoleName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[CreateDate], [r].[Creator], [r].[DeleterUserId], [r].[DeletionTime], [r].[Description], [r].[IsDeleted], [r].[LastModificationTime], [r].[LastModifierUserId], [r].[Name], [r].[NormalizedName], [r].[Status]
+FROM [Roles] AS [r]
+WHERE (([r].[NormalizedName] = @__normalizedRoleName_0) AND ([r].[NormalizedName] IS NOT NULL AND @__normalizedRoleName_0 IS NOT NULL)) OR ([r].[NormalizedName] IS NULL AND @__normalizedRoleName_0 IS NULL)
+2020-04-12 18:12:32.558 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__normalizedUserName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreateDate], [u].[Creator], [u].[DeleterUserId], [u].[DeletionTime], [u].[Email], [u].[EmailConfirmed], [u].[IsDeleted], [u].[LanguageId], [u].[LastModificationTime], [u].[LastModifierUserId], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[Title], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE (([u].[NormalizedUserName] = @__normalizedUserName_0) AND ([u].[NormalizedUserName] IS NOT NULL AND @__normalizedUserName_0 IS NOT NULL)) OR ([u].[NormalizedUserName] IS NULL AND @__normalizedUserName_0 IS NULL)
+2020-04-12 18:12:32.580 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__normalizedEmail_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreateDate], [u].[Creator], [u].[DeleterUserId], [u].[DeletionTime], [u].[Email], [u].[EmailConfirmed], [u].[IsDeleted], [u].[LanguageId], [u].[LastModificationTime], [u].[LastModifierUserId], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[Title], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE (([u].[NormalizedEmail] = @__normalizedEmail_0) AND ([u].[NormalizedEmail] IS NOT NULL AND @__normalizedEmail_0 IS NOT NULL)) OR ([u].[NormalizedEmail] IS NULL AND @__normalizedEmail_0 IS NULL)
+2020-04-12 18:12:32.705 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Guid), @p4='?' (DbType = Guid), @p5='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [UserRoles] ([UserId], [RoleId], [CreateDate], [Creator], [Id], [Status])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2020-04-12 18:12:32.729 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@p24='?' (DbType = Guid), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Guid), @p4='?' (DbType = Int64), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000), @p7='?' (DbType = Boolean), @p8='?' (DbType = Boolean), @p9='?' (DbType = Guid), @p10='?' (DbType = DateTime2), @p11='?' (DbType = Guid), @p12='?' (DbType = Boolean), @p13='?' (DbType = DateTimeOffset), @p14='?' (Size = 4000), @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (DbType = Boolean), @p19='?' (Size = 4000), @p20='?' (DbType = Int32), @p21='?' (Size = 4000), @p22='?' (DbType = Boolean), @p23='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Users] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [CreateDate] = @p2, [Creator] = @p3, [DeleterUserId] = @p4, [DeletionTime] = @p5, [Email] = @p6, [EmailConfirmed] = @p7, [IsDeleted] = @p8, [LanguageId] = @p9, [LastModificationTime] = @p10, [LastModifierUserId] = @p11, [LockoutEnabled] = @p12, [LockoutEnd] = @p13, [NormalizedEmail] = @p14, [NormalizedUserName] = @p15, [PasswordHash] = @p16, [PhoneNumber] = @p17, [PhoneNumberConfirmed] = @p18, [SecurityStamp] = @p19, [Status] = @p20, [Title] = @p21, [TwoFactorEnabled] = @p22, [UserName] = @p23
+WHERE [Id] = @p24;
+SELECT @@ROWCOUNT;
+2020-04-12 18:12:32.808 +03:00 [Information] EA.Application.WebApi.Controllers.LanguageController: User Role Add to userid:8978024a-c1be-4967-6359-08d7def1b5b8 role:51942486-4754-4985-8103-08d7def2151d result:User Role Added Successfully.
+2020-04-12 18:12:32.823 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor: Executing ObjectResult, writing value of type 'EA.Application.Common.Api.ApiResult'.
+2020-04-12 18:12:32.847 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Executed action EA.Application.WebApi.Controllers.UserController.AddUserRoleAsync (EA.Application.WebApi) in 6223.1543ms
+2020-04-12 18:12:32.856 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 6293.7133ms 200 application/json; charset=utf-8
+2020-04-12 18:12:50.812 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 POST http://localhost:51494/User/AddUserRoleAsync application/json 99
+2020-04-12 18:12:50.818 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Route matched with {action = "AddUserRole", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[EA.Application.Common.Api.ApiResult] AddUserRoleAsync(EA.Application.WebApi.VM.UserRoleModel) on controller EA.Application.WebApi.Controllers.UserController (EA.Application.WebApi).
+2020-04-12 18:12:50.867 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 18:12:50.873 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 18:13:00.874 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreateDate], [u].[Creator], [u].[DeleterUserId], [u].[DeletionTime], [u].[Email], [u].[EmailConfirmed], [u].[IsDeleted], [u].[LanguageId], [u].[LastModificationTime], [u].[LastModifierUserId], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[Title], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE ([u].[Id] = @__p_0) AND @__p_0 IS NOT NULL
+2020-04-12 18:13:00.882 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__roleId_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreateDate], [r].[Creator], [r].[DeleterUserId], [r].[DeletionTime], [r].[Description], [r].[IsDeleted], [r].[LastModificationTime], [r].[LastModifierUserId], [r].[Name], [r].[NormalizedName], [r].[Status]
+FROM [Roles] AS [r]
+WHERE ([r].[Id] = @__roleId_0) AND @__roleId_0 IS NOT NULL
+2020-04-12 18:13:00.887 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__normalizedRoleName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[CreateDate], [r].[Creator], [r].[DeleterUserId], [r].[DeletionTime], [r].[Description], [r].[IsDeleted], [r].[LastModificationTime], [r].[LastModifierUserId], [r].[Name], [r].[NormalizedName], [r].[Status]
+FROM [Roles] AS [r]
+WHERE (([r].[NormalizedName] = @__normalizedRoleName_0) AND ([r].[NormalizedName] IS NOT NULL AND @__normalizedRoleName_0 IS NOT NULL)) OR ([r].[NormalizedName] IS NULL AND @__normalizedRoleName_0 IS NULL)
+2020-04-12 18:13:00.994 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__p_0='?' (DbType = Guid), @__p_1='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[RoleId], [u].[CreateDate], [u].[Creator], [u].[Id], [u].[Status]
+FROM [UserRoles] AS [u]
+WHERE (([u].[UserId] = @__p_0) AND @__p_0 IS NOT NULL) AND (([u].[RoleId] = @__p_1) AND @__p_1 IS NOT NULL)
+2020-04-12 18:13:01.000 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__normalizedRoleName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[CreateDate], [r].[Creator], [r].[DeleterUserId], [r].[DeletionTime], [r].[Description], [r].[IsDeleted], [r].[LastModificationTime], [r].[LastModifierUserId], [r].[Name], [r].[NormalizedName], [r].[Status]
+FROM [Roles] AS [r]
+WHERE (([r].[NormalizedName] = @__normalizedRoleName_0) AND ([r].[NormalizedName] IS NOT NULL AND @__normalizedRoleName_0 IS NOT NULL)) OR ([r].[NormalizedName] IS NULL AND @__normalizedRoleName_0 IS NULL)
+2020-04-12 18:13:01.005 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__normalizedUserName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreateDate], [u].[Creator], [u].[DeleterUserId], [u].[DeletionTime], [u].[Email], [u].[EmailConfirmed], [u].[IsDeleted], [u].[LanguageId], [u].[LastModificationTime], [u].[LastModifierUserId], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[Title], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE (([u].[NormalizedUserName] = @__normalizedUserName_0) AND ([u].[NormalizedUserName] IS NOT NULL AND @__normalizedUserName_0 IS NOT NULL)) OR ([u].[NormalizedUserName] IS NULL AND @__normalizedUserName_0 IS NULL)
+2020-04-12 18:13:01.011 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__normalizedEmail_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreateDate], [u].[Creator], [u].[DeleterUserId], [u].[DeletionTime], [u].[Email], [u].[EmailConfirmed], [u].[IsDeleted], [u].[LanguageId], [u].[LastModificationTime], [u].[LastModifierUserId], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[Title], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE (([u].[NormalizedEmail] = @__normalizedEmail_0) AND ([u].[NormalizedEmail] IS NOT NULL AND @__normalizedEmail_0 IS NOT NULL)) OR ([u].[NormalizedEmail] IS NULL AND @__normalizedEmail_0 IS NULL)
+2020-04-12 18:13:01.016 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Guid), @p4='?' (DbType = Guid), @p5='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [UserRoles] ([UserId], [RoleId], [CreateDate], [Creator], [Id], [Status])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2020-04-12 18:13:01.020 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@p24='?' (DbType = Guid), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Guid), @p4='?' (DbType = Int64), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000), @p7='?' (DbType = Boolean), @p8='?' (DbType = Boolean), @p9='?' (DbType = Guid), @p10='?' (DbType = DateTime2), @p11='?' (DbType = Guid), @p12='?' (DbType = Boolean), @p13='?' (DbType = DateTimeOffset), @p14='?' (Size = 4000), @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (DbType = Boolean), @p19='?' (Size = 4000), @p20='?' (DbType = Int32), @p21='?' (Size = 4000), @p22='?' (DbType = Boolean), @p23='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Users] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [CreateDate] = @p2, [Creator] = @p3, [DeleterUserId] = @p4, [DeletionTime] = @p5, [Email] = @p6, [EmailConfirmed] = @p7, [IsDeleted] = @p8, [LanguageId] = @p9, [LastModificationTime] = @p10, [LastModifierUserId] = @p11, [LockoutEnabled] = @p12, [LockoutEnd] = @p13, [NormalizedEmail] = @p14, [NormalizedUserName] = @p15, [PasswordHash] = @p16, [PhoneNumber] = @p17, [PhoneNumberConfirmed] = @p18, [SecurityStamp] = @p19, [Status] = @p20, [Title] = @p21, [TwoFactorEnabled] = @p22, [UserName] = @p23
+WHERE [Id] = @p24;
+SELECT @@ROWCOUNT;
+2020-04-12 18:13:01.025 +03:00 [Information] EA.Application.WebApi.Controllers.LanguageController: User Role Add to userid:8978024a-c1be-4967-6359-08d7def1b5b8 role:422aaa75-7f59-43ea-8104-08d7def2151d result:User Role Added Successfully.
+2020-04-12 18:13:01.028 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor: Executing ObjectResult, writing value of type 'EA.Application.Common.Api.ApiResult'.
+2020-04-12 18:13:01.032 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Executed action EA.Application.WebApi.Controllers.UserController.AddUserRoleAsync (EA.Application.WebApi) in 10210.6901ms
+2020-04-12 18:13:01.035 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 10223.3701ms 200 application/json; charset=utf-8
+2020-04-12 18:23:18.189 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 POST http://localhost:51494/Authentication/LoginAsync application/json 58
+2020-04-12 18:23:18.212 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Route matched with {action = "Login", controller = "Token"}. Executing controller action with signature System.Threading.Tasks.Task`1[EA.Application.Common.Api.ApiResult] LoginAsync(EA.Application.WebApi.VM.LoginModel) on controller EA.Application.WebApi.Controllers.TokenController (EA.Application.WebApi).
+2020-04-12 18:23:18.221 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 18:23:22.794 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__normalizedEmail_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreateDate], [u].[Creator], [u].[DeleterUserId], [u].[DeletionTime], [u].[Email], [u].[EmailConfirmed], [u].[IsDeleted], [u].[LanguageId], [u].[LastModificationTime], [u].[LastModifierUserId], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[Title], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE (([u].[NormalizedEmail] = @__normalizedEmail_0) AND ([u].[NormalizedEmail] IS NOT NULL AND @__normalizedEmail_0 IS NOT NULL)) OR ([u].[NormalizedEmail] IS NULL AND @__normalizedEmail_0 IS NULL)
+2020-04-12 18:23:23.302 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor: Executing ObjectResult, writing value of type 'EA.Application.Common.Api.ApiResult'.
+2020-04-12 18:23:23.323 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Executed action EA.Application.WebApi.Controllers.TokenController.LoginAsync (EA.Application.WebApi) in 5107.9887ms
+2020-04-12 18:23:23.326 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 5139.9748ms 200 application/json; charset=utf-8
+2020-04-12 19:53:03.578 +03:00 [Information] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager: User profile is available. Using 'C:\Users\ABS\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-04-12 19:53:03.850 +03:00 [Information] Microsoft.Hosting.Lifetime: Application started. Press Ctrl+C to shut down.
+2020-04-12 19:53:03.862 +03:00 [Information] Microsoft.Hosting.Lifetime: Hosting environment: Development
+2020-04-12 19:53:03.888 +03:00 [Information] Microsoft.Hosting.Lifetime: Content root path: D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.WebApi
+2020-04-12 19:53:03.923 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/  
+2020-04-12 19:53:03.961 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: No cached response available for this request.
+2020-04-12 19:53:04.093 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2020-04-12 19:53:04.130 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 210.1578ms 404 text/plain
+2020-04-12 19:53:05.044 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/favicon.ico  
+2020-04-12 19:53:05.057 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: No cached response available for this request.
+2020-04-12 19:53:05.059 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2020-04-12 19:53:05.063 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 19.4374ms 404 text/plain
+2020-04-12 19:53:16.424 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 POST http://localhost:51494/Language/GetAll application/json 99
+2020-04-12 19:53:16.436 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 13.375300000000001ms 404 text/plain
+2020-04-12 19:53:54.222 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/Language/GetAll application/json 99
+2020-04-12 19:53:54.230 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2020-04-12 19:53:54.235 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 13.513200000000001ms 404 text/plain
+2020-04-12 19:56:05.898 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/Language/GetAll  
+2020-04-12 19:56:05.903 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 5.7958ms 404 text/plain
+2020-04-12 20:00:17.158 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 POST http://localhost:51494/Authentication/LoginAsync application/json 58
+2020-04-12 20:00:17.198 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Route matched with {action = "Login", controller = "Token"}. Executing controller action with signature System.Threading.Tasks.Task`1[EA.Application.Common.Api.ApiResult] LoginAsync(EA.Application.WebApi.VM.LoginModel) on controller EA.Application.WebApi.Controllers.TokenController (EA.Application.WebApi).
+2020-04-12 20:00:17.844 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 20:00:20.507 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__normalizedEmail_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreateDate], [u].[Creator], [u].[DeleterUserId], [u].[DeletionTime], [u].[Email], [u].[EmailConfirmed], [u].[IsDeleted], [u].[LanguageId], [u].[LastModificationTime], [u].[LastModifierUserId], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[Title], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE (([u].[NormalizedEmail] = @__normalizedEmail_0) AND ([u].[NormalizedEmail] IS NOT NULL AND @__normalizedEmail_0 IS NOT NULL)) OR ([u].[NormalizedEmail] IS NULL AND @__normalizedEmail_0 IS NULL)
+2020-04-12 20:00:20.883 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor: Executing ObjectResult, writing value of type 'EA.Application.Common.Api.ApiResult'.
+2020-04-12 20:00:20.921 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Executed action EA.Application.WebApi.Controllers.TokenController.LoginAsync (EA.Application.WebApi) in 3714.7856ms
+2020-04-12 20:00:20.930 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 3771.1492000000003ms 200 application/json; charset=utf-8
+2020-04-12 20:00:57.491 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/Language/GetAll  
+2020-04-12 20:00:57.498 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 11.4364ms 404 text/plain
+2020-04-12 20:01:52.123 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/Language/GetAll  
+2020-04-12 20:01:52.127 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 4.5571ms 404 text/plain
+2020-04-12 20:04:17.534 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/Language/GetAll  
+2020-04-12 20:04:17.539 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 5.486400000000001ms 404 text/plain
+2020-04-12 20:04:37.822 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 POST http://localhost:51494/Authentication/LoginAsync application/json 58
+2020-04-12 20:04:37.827 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Route matched with {action = "Login", controller = "Token"}. Executing controller action with signature System.Threading.Tasks.Task`1[EA.Application.Common.Api.ApiResult] LoginAsync(EA.Application.WebApi.VM.LoginModel) on controller EA.Application.WebApi.Controllers.TokenController (EA.Application.WebApi).
+2020-04-12 20:04:37.855 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 20:04:41.177 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__normalizedEmail_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreateDate], [u].[Creator], [u].[DeleterUserId], [u].[DeletionTime], [u].[Email], [u].[EmailConfirmed], [u].[IsDeleted], [u].[LanguageId], [u].[LastModificationTime], [u].[LastModifierUserId], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[Title], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE (([u].[NormalizedEmail] = @__normalizedEmail_0) AND ([u].[NormalizedEmail] IS NOT NULL AND @__normalizedEmail_0 IS NOT NULL)) OR ([u].[NormalizedEmail] IS NULL AND @__normalizedEmail_0 IS NULL)
+2020-04-12 20:04:41.197 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor: Executing ObjectResult, writing value of type 'EA.Application.Common.Api.ApiResult'.
+2020-04-12 20:04:41.204 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Executed action EA.Application.WebApi.Controllers.TokenController.LoginAsync (EA.Application.WebApi) in 3373.4158ms
+2020-04-12 20:04:41.208 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 3386.06ms 200 application/json; charset=utf-8
+2020-04-12 20:05:12.710 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/Language/GetAll  
+2020-04-12 20:05:12.716 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 5.1203ms 404 text/plain
+2020-04-12 20:06:04.928 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/Language/GetAll  
+2020-04-12 20:06:04.935 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 4.6582ms 404 text/plain
+2020-04-12 20:06:20.836 +03:00 [Information] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager: User profile is available. Using 'C:\Users\ABS\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-04-12 20:06:21.077 +03:00 [Information] Microsoft.Hosting.Lifetime: Application started. Press Ctrl+C to shut down.
+2020-04-12 20:06:21.087 +03:00 [Information] Microsoft.Hosting.Lifetime: Hosting environment: Development
+2020-04-12 20:06:21.089 +03:00 [Information] Microsoft.Hosting.Lifetime: Content root path: D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.WebApi
+2020-04-12 20:06:21.114 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/  
+2020-04-12 20:06:21.141 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: No cached response available for this request.
+2020-04-12 20:06:21.272 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2020-04-12 20:06:21.309 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 197.84210000000002ms 404 text/plain
+2020-04-12 20:07:05.179 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/Language/GetAll  
+2020-04-12 20:07:05.212 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 27.734ms 404 text/plain
+2020-04-12 20:07:29.080 +03:00 [Information] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager: User profile is available. Using 'C:\Users\ABS\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-04-12 20:07:29.330 +03:00 [Information] Microsoft.Hosting.Lifetime: Application started. Press Ctrl+C to shut down.
+2020-04-12 20:07:29.345 +03:00 [Information] Microsoft.Hosting.Lifetime: Hosting environment: Development
+2020-04-12 20:07:29.358 +03:00 [Information] Microsoft.Hosting.Lifetime: Content root path: D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.WebApi
+2020-04-12 20:07:29.406 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/  
+2020-04-12 20:07:29.434 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: No cached response available for this request.
+2020-04-12 20:07:29.576 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2020-04-12 20:07:29.605 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 222.6868ms 404 text/plain
+2020-04-12 20:07:49.179 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/Language/GetAll  
+2020-04-12 20:07:49.197 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 17.6946ms 404 text/plain
+2020-04-12 20:07:56.019 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 POST http://localhost:51494/Authentication/LoginAsync application/json 58
+2020-04-12 20:07:56.064 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Route matched with {action = "Login", controller = "Token"}. Executing controller action with signature System.Threading.Tasks.Task`1[EA.Application.Common.Api.ApiResult] LoginAsync(EA.Application.WebApi.VM.LoginModel) on controller EA.Application.WebApi.Controllers.TokenController (EA.Application.WebApi).
+2020-04-12 20:07:56.739 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 20:07:57.256 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__normalizedEmail_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreateDate], [u].[Creator], [u].[DeleterUserId], [u].[DeletionTime], [u].[Email], [u].[EmailConfirmed], [u].[IsDeleted], [u].[LanguageId], [u].[LastModificationTime], [u].[LastModifierUserId], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[Title], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE (([u].[NormalizedEmail] = @__normalizedEmail_0) AND ([u].[NormalizedEmail] IS NOT NULL AND @__normalizedEmail_0 IS NOT NULL)) OR ([u].[NormalizedEmail] IS NULL AND @__normalizedEmail_0 IS NULL)
+2020-04-12 20:07:57.546 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor: Executing ObjectResult, writing value of type 'EA.Application.Common.Api.ApiResult'.
+2020-04-12 20:07:57.573 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Executed action EA.Application.WebApi.Controllers.TokenController.LoginAsync (EA.Application.WebApi) in 1501.903ms
+2020-04-12 20:07:57.587 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 1562.7926ms 200 application/json; charset=utf-8
+2020-04-12 20:08:19.326 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/Language/GetAll  
+2020-04-12 20:08:19.333 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 5.8174ms 404 text/plain
+2020-04-12 20:09:29.042 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 POST http://localhost:51494/Language/Ad application/json 39
+2020-04-12 20:09:29.049 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 4.709700000000001ms 404 text/plain
+2020-04-12 20:12:44.104 +03:00 [Information] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager: User profile is available. Using 'C:\Users\ABS\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-04-12 20:12:44.436 +03:00 [Information] Microsoft.Hosting.Lifetime: Application started. Press Ctrl+C to shut down.
+2020-04-12 20:12:44.452 +03:00 [Information] Microsoft.Hosting.Lifetime: Hosting environment: Development
+2020-04-12 20:12:44.483 +03:00 [Information] Microsoft.Hosting.Lifetime: Content root path: D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.WebApi
+2020-04-12 20:12:44.522 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/  
+2020-04-12 20:12:44.569 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: No cached response available for this request.
+2020-04-12 20:12:44.720 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2020-04-12 20:12:44.753 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 234.6319ms 404 text/plain
+2020-04-12 20:12:45.326 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/favicon.ico  
+2020-04-12 20:12:45.339 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: No cached response available for this request.
+2020-04-12 20:12:45.341 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2020-04-12 20:12:45.345 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 19.1034ms 404 text/plain
+2020-04-12 20:13:22.118 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/Language/GetAll  
+2020-04-12 20:13:22.133 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 14.7211ms 404 text/plain
+2020-04-12 20:13:28.997 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/Language/GetAll  
+2020-04-12 20:13:29.002 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2020-04-12 20:13:29.007 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 9.375ms 404 text/plain
+2020-04-12 20:15:52.848 +03:00 [Information] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager: User profile is available. Using 'C:\Users\ABS\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-04-12 20:15:53.085 +03:00 [Information] Microsoft.Hosting.Lifetime: Application started. Press Ctrl+C to shut down.
+2020-04-12 20:15:53.095 +03:00 [Information] Microsoft.Hosting.Lifetime: Hosting environment: Development
+2020-04-12 20:15:53.097 +03:00 [Information] Microsoft.Hosting.Lifetime: Content root path: D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.WebApi
+2020-04-12 20:15:53.126 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/  
+2020-04-12 20:15:53.154 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: No cached response available for this request.
+2020-04-12 20:15:53.289 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2020-04-12 20:15:53.317 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 192.1189ms 404 text/plain
+2020-04-12 20:16:46.278 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/lang/GetAll  
+2020-04-12 20:16:46.336 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Route matched with {action = "GetAll", controller = "Language"}. Executing controller action with signature EA.Application.Common.Api.ApiResult`1[System.Collections.Generic.List`1[EA.Application.Dto.DTOS.LanguageDto]] GetAll() on controller EA.Application.WebApi.Controllers.LanguageController (EA.Application.WebApi).
+2020-04-12 20:16:47.018 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 20:16:52.429 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [l].[Id], [l].[CreateDate], [l].[Creator], [l].[Culture], [l].[Name], [l].[Status]
+FROM [Languages] AS [l]
+2020-04-12 20:16:52.526 +03:00 [Information] EA.Application.WebApi.Controllers.LanguageController: Getall records from the EA.Application.Data.Entitites.Language table
+2020-04-12 20:16:52.546 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor: Executing ObjectResult, writing value of type 'EA.Application.Common.Api.ApiResult`1[[System.Collections.Generic.List`1[[EA.Application.Dto.DTOS.LanguageDto, EA.Application.Dto, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2020-04-12 20:16:52.573 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Executed action EA.Application.WebApi.Controllers.LanguageController.GetAll (EA.Application.WebApi) in 6229.346100000001ms
+2020-04-12 20:16:52.577 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2020-04-12 20:16:52.585 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 6305.9506ms 200 application/json; charset=utf-8
+2020-04-12 20:17:17.070 +03:00 [Information] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager: User profile is available. Using 'C:\Users\ABS\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-04-12 20:17:17.302 +03:00 [Information] Microsoft.Hosting.Lifetime: Application started. Press Ctrl+C to shut down.
+2020-04-12 20:17:17.313 +03:00 [Information] Microsoft.Hosting.Lifetime: Hosting environment: Development
+2020-04-12 20:17:17.334 +03:00 [Information] Microsoft.Hosting.Lifetime: Content root path: D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.WebApi
+2020-04-12 20:17:17.365 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/  
+2020-04-12 20:17:17.398 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: No cached response available for this request.
+2020-04-12 20:17:17.509 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2020-04-12 20:17:17.536 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 174.6698ms 404 text/plain
+2020-04-12 20:18:11.776 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 POST http://localhost:51494/Authentication/LoginAsync application/json 58
+2020-04-12 20:18:11.841 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Route matched with {action = "Login", controller = "Token"}. Executing controller action with signature System.Threading.Tasks.Task`1[EA.Application.Common.Api.ApiResult] LoginAsync(EA.Application.WebApi.VM.LoginModel) on controller EA.Application.WebApi.Controllers.TokenController (EA.Application.WebApi).
+2020-04-12 20:18:12.774 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 20:18:13.413 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__normalizedEmail_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreateDate], [u].[Creator], [u].[DeleterUserId], [u].[DeletionTime], [u].[Email], [u].[EmailConfirmed], [u].[IsDeleted], [u].[LanguageId], [u].[LastModificationTime], [u].[LastModifierUserId], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[Title], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE (([u].[NormalizedEmail] = @__normalizedEmail_0) AND ([u].[NormalizedEmail] IS NOT NULL AND @__normalizedEmail_0 IS NOT NULL)) OR ([u].[NormalizedEmail] IS NULL AND @__normalizedEmail_0 IS NULL)
+2020-04-12 20:18:13.726 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor: Executing ObjectResult, writing value of type 'EA.Application.Common.Api.ApiResult'.
+2020-04-12 20:18:13.762 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Executed action EA.Application.WebApi.Controllers.TokenController.LoginAsync (EA.Application.WebApi) in 1912.1173000000001ms
+2020-04-12 20:18:13.770 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 1995.22ms 200 application/json; charset=utf-8
+2020-04-12 20:18:27.605 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/lang/GetAll  
+2020-04-12 20:18:27.616 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Route matched with {action = "GetAll", controller = "Language"}. Executing controller action with signature EA.Application.Common.Api.ApiResult`1[System.Collections.Generic.List`1[EA.Application.Dto.DTOS.LanguageDto]] GetAll() on controller EA.Application.WebApi.Controllers.LanguageController (EA.Application.WebApi).
+2020-04-12 20:18:27.926 +03:00 [Information] Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler: Successfully validated the token.
+2020-04-12 20:18:27.936 +03:00 [Information] Microsoft.AspNetCore.Authorization.DefaultAuthorizationService: Authorization was successful.
+2020-04-12 20:18:27.946 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-04-12 20:18:34.107 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [l].[Id], [l].[CreateDate], [l].[Creator], [l].[Culture], [l].[Name], [l].[Status]
+FROM [Languages] AS [l]
+2020-04-12 20:18:34.125 +03:00 [Information] EA.Application.WebApi.Controllers.LanguageController: Getall records from the EA.Application.Data.Entitites.Language table
+2020-04-12 20:18:34.135 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor: Executing ObjectResult, writing value of type 'EA.Application.Common.Api.ApiResult`1[[System.Collections.Generic.List`1[[EA.Application.Dto.DTOS.LanguageDto, EA.Application.Dto, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2020-04-12 20:18:34.143 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Executed action EA.Application.WebApi.Controllers.LanguageController.GetAll (EA.Application.WebApi) in 6523.7666ms
+2020-04-12 20:18:34.148 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 6542.4159ms 200 application/json; charset=utf-8
+2020-04-12 20:18:39.152 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/lang/GetAll  
+2020-04-12 20:18:39.157 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Route matched with {action = "GetAll", controller = "Language"}. Executing controller action with signature EA.Application.Common.Api.ApiResult`1[System.Collections.Generic.List`1[EA.Application.Dto.DTOS.LanguageDto]] GetAll() on controller EA.Application.WebApi.Controllers.LanguageController (EA.Application.WebApi).
+2020-04-12 20:18:39.161 +03:00 [Information] Microsoft.AspNetCore.Authorization.DefaultAuthorizationService: Authorization failed.
+2020-04-12 20:18:39.165 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2020-04-12 20:18:39.170 +03:00 [Information] Microsoft.AspNetCore.Mvc.ChallengeResult: Executing ChallengeResult with authentication schemes (Bearer).
+2020-04-12 20:18:39.181 +03:00 [Information] Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler: AuthenticationScheme: Bearer was challenged.
+2020-04-12 20:18:39.184 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Executed action EA.Application.WebApi.Controllers.LanguageController.GetAll (EA.Application.WebApi) in 24.1854ms
+2020-04-12 20:18:39.188 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2020-04-12 20:18:39.192 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 42.0287ms 401 text/plain

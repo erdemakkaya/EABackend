@@ -108,7 +108,10 @@ namespace EA.Application.WebApi
             #region IdentitySection
             //Identity yapısını ekliyoruz ve kendi oluşturduğumuz sınıfları veriyoruz.
             services.AddIdentity<ApplicationUser, ApplicationRole>()
-                    .AddEntityFrameworkStores<DbContext>();
+                .AddRoleManager<RoleManager<ApplicationRole>>()
+                .AddUserManager<UserManager<ApplicationUser>>()
+                .AddRoles<ApplicationRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>();
 
             //Identity ile ilgili kurallar
             services.Configure<IdentityOptions>(options =>
