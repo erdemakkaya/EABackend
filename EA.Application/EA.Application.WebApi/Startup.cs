@@ -8,6 +8,8 @@ using Microsoft.Extensions.Logging;
 using EA.Application.Data.Entitites;
 using System;
 using System.IdentityModel.Tokens.Jwt;
+using System.IO;
+using System.Linq;
 using System.Text;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -23,6 +25,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.OpenApi.Models;
+using System.Reflection;
+using EA.Application.WebApi.Swagger;
 
 namespace EA.Application.WebApi
 {
@@ -70,7 +75,7 @@ namespace EA.Application.WebApi
                     };
                 });
             services.ConfigureApplicationCookie(options => options.LoginPath = "/api/Token");
-#endregion
+            #endregion
             #region LoggingSection
             //appsettings.json dosyasında bulunan Logging ayarları olarak hangi seviyede loglama yapılacağını bildiriyor ve sonradan eklediğimiz
             //FilePrefix, LogDirectory, FileSizeLimit alanlarını da manuel olarak ayar dosyasından çekerek gerekli atamaları yapıyoruz
@@ -166,12 +171,41 @@ namespace EA.Application.WebApi
             services.AddResponseCaching();
             #endregion
 
+            #region SwaggerSection
+
+            services.AddSwaggerGen(c => {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "EA.Application.WebApi",
+                    Description = "Core identity, jwt token, paging, file logging, repository patter kullanılacak oluşturulmuştur.",
+                    Contact = new OpenApiContact()
+                    {
+                        
+                        Name = "Erdem Akkaya",
+                        Email = "erdemdakkaya@gmail.com",
+                        Url = new Uri("http://www.erdemakkaya.com")
+                    }
+                });
+
+                c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
+                c.OperationFilter<HeaderFiltersForSwagger>();
+
+                // Set the comments path for the Swagger JSON and UI.
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
+            });
+
+            #endregion
 
             #region MvcSection
 
             services.AddMvc(option => option.EnableEndpointRouting = false);
 
             #endregion
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -197,6 +231,14 @@ namespace EA.Application.WebApi
             app.UseResponseCaching();
             #endregion
 
+            #region  Swagger
+            app.UseSwagger();
+            app.UseSwaggerUI(c => {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
+            #endregion
+
+
             #region MvcSection
             app.UseMvc(routes =>
             {
@@ -205,6 +247,8 @@ namespace EA.Application.WebApi
 
 
             #endregion
+
+
         }
     }
 }

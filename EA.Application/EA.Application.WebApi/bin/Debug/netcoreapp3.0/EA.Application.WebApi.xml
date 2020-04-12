@@ -1,0 +1,251 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EA.Application.WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:EA.Application.WebApi.Controllers.AppResourceController.Add(EA.Application.Dto.DTOS.AppResourceDto)">
+            <summary>
+            Unit of work 'ün çalışması ve kayıtların veritabanına ulaşması için Add,Update,Delete metotlarını override ediyoruz
+            Bu bir zorunluluk değil eğer unitofwork'ü ApiBase içerisinde savechanges yapacak şekilde kullanırsanız bu metotları override etmek zorunda kalmazsınız
+            Ancak o zaman unit of work mantığı boş yere bu sisteme eklenmiş gibi olacak 
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EA.Application.WebApi.Controllers.AppResourceController.GetResourcesByLanguage(System.Guid)">
+            <summary>
+            İstenen dile ait tüm çeviriler 1 gün boyunca sunucu belleğine 
+            2 dakika boyunca ise response cache olarak ekleniyor. 
+            Guid tipindeki dil Id si ise memory cache için anahtar görevi görüyor.
+            </summary>
+            <param name="LanguageId">İstenen dil</param>
+            <returns></returns>
+        </member>
+        <member name="M:EA.Application.WebApi.Controllers.AppResourceController.ClearCache(System.Guid)">
+            <summary>
+            memory cache içinde bulunan dile ait verilerin silinmesi işlemini yapan metot
+            </summary>
+            <param name="LanguageId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:EA.Application.WebApi.Controllers.CustomerController">
+            <summary>
+            Müşteri tablosu işlemleri için kullanılacak sınıf.
+            </summary>
+        </member>
+        <member name="M:EA.Application.WebApi.Controllers.CustomerController.Find(System.Guid)">
+            <summary>
+            Include işlemi olduğu için Find metodunu override ediyoruz.
+            </summary>
+            <param name="id">İstenen kaydın Id bilgisi</param>
+            <returns></returns>
+        </member>
+        <member name="M:EA.Application.WebApi.Controllers.CustomerController.GetAll">
+            <summary>
+            Include işlemi olduğu için getall metodunu override ediyoruz.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EA.Application.WebApi.Controllers.CustomerController.Add(EA.Application.Dto.DTOS.CustomerDto)">
+            <summary>
+            Unit of work 'ün çalışması ve kayıtların veritabanına ulaşması için Add,Update,Delete metotlarını override ediyoruz
+            Bu bir zorunluluk değil eğer unitofwork'ü ApiBase içerisinde savechanges yapacak şekilde kullanırsanız bu metotları override etmek zorunda kalmazsınız
+            Ancak o zaman unit of work mantığı boş yere bu sisteme eklenmiş gibi olacak 
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EA.Application.WebApi.Controllers.LanguageController.Add(EA.Application.Dto.DTOS.LanguageDto)">
+            <summary>
+            Add metodunu override ederek çift kayıt kontrolü yaptık
+            dikkat edilmesi gerekn nokta savechanges diyerek işlemleri kaydetmiş olmamız.
+            Eğer savechanges yapmazsanız geriye eklendi dönseniz bile veritabanına kayıt eklenmeyecektir.
+            Begin new transaction işlemi yapmadık çünkü savechanges içerisinde transaction yoksa yeni oluştur kuralı eklemiştik.
+            </summary>
+            <param name="item">eklenecek dile ait bilgiler</param>
+            <returns></returns>
+        </member>
+        <member name="M:EA.Application.WebApi.Controllers.LanguageController.CheckDublicateLanguage(System.String)">
+            <summary>
+            Çift kayıt kontrolü yapan metodumuz ben burada culture property'sini kontrol etmeyi tercih ettim.
+            </summary>
+            <param name="culture"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EA.Application.WebApi.Controllers.LanguageController.Update(EA.Application.Dto.DTOS.LanguageDto)">
+            <summary>
+            Unit of work 'ün çalışması ve kayıtların veritabanına ulaşması için Add,Update,Delete metotlarını override ediyoruz
+            Bu bir zorunluluk değil eğer unitofwork'ü ApiBase içerisinde savechanges yapacak şekilde kullanırsanız bu metotları override etmek zorunda kalmazsınız
+            Ancak o zaman unit of work mantığı boş yere bu sisteme eklenmiş gibi olacak 
+            Update metodunda da duplicate kontrolü yapabilirsiniz.
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:EA.Application.WebApi.Controllers.OrganizationController.Add(EA.Application.Dto.DTOS.OrganizationDto)">
+            <summary>
+            Unit of work 'ün çalışması ve kayıtların veritabanına ulaşması için Add,Update,Delete metotlarını override ediyoruz
+            Bu bir zorunluluk değil eğer unitofwork'ü ApiBase içerisinde savechanges yapacak şekilde kullanırsanız bu metotları override etmek zorunda kalmazsınız
+            Ancak o zaman unit of work mantığı boş yere bu sisteme eklenmiş gibi olacak 
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="T:EA.Application.WebApi.Controllers.TokenController">
+            <summary>
+            Token oluşturulmasını ve login işlemlerinin gerçekleşmesini sağlayan sınıf.
+            Route Authentication diyerek bu url üzerinde çalışacağını bildiriyoruz burası size kalmış ahmet, mehmet bile yazabilirsiniz
+            </summary>
+        </member>
+        <member name="M:EA.Application.WebApi.Controllers.TokenController.#ctor(System.IServiceProvider,AutoMapper.IMapper)">
+            <summary>
+            Yapıcı metod
+            </summary>
+            <param name="service"></param>
+        </member>
+        <member name="M:EA.Application.WebApi.Controllers.TokenController.LoginAsync(EA.Application.WebApi.VM.LoginModel)">
+            <summary>
+            Login işleminin gerçekleşeceği metot.
+            Route LoginAsync diyerek bu link ile erişilmesini söylüyoruz.
+            </summary>
+            <param name="loginModel">Kullanıcı işlemleri için gerekli bilgileri barındıran sınıf</param>
+            <returns></returns>
+        </member>
+        <member name="T:EA.Application.WebApi.Controllers.UserController">
+            <summary>
+            Identity Alt yapısını kullanarak kullanıcı işlemleri yapacağımız sınıf
+            </summary>
+        </member>
+        <member name="F:EA.Application.WebApi.Controllers.UserController._userManager">
+            <summary>
+            Identity alt yapısı içerisinde bulunan UserManager sınıfı ile kullanıcı işlemlerini yapacağız.
+            </summary>
+        </member>
+        <member name="M:EA.Application.WebApi.Controllers.UserController.AddAsync(EA.Application.Dto.DTOS.ApplicationUserDto)">
+            <summary>
+            Base de bulunan Add metodu virtual olarak tanımlandığından dolayı override edilebilir
+            diğer entitylerden farklı olarak ApplicationUser üzerinde yapılacak ekleme işlemi UserManager sınıf kullanılarak yapılacak
+            Bu nedenle base de bulunan Add metodunu override ediyoruz.
+            </summary>
+            <param name="item">Eklenmesi istenen kullanıcıya ait bilgiler</param>
+            <returns></returns>
+        </member>
+        <member name="M:EA.Application.WebApi.Controllers.UserController.Add(EA.Application.Dto.DTOS.ApplicationUserDto)">
+            <summary>
+            Asenkron olan ekleme metodunun kullanılması gerektiğini bildiriyoruz.
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EA.Application.WebApi.Controllers.UserController.UpdateAsync(EA.Application.Dto.DTOS.ApplicationUserDto)">
+            <summary>
+            Güncelleme işlemini async metot ile yapıyoru. 
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EA.Application.WebApi.Controllers.UserController.Update(EA.Application.Dto.DTOS.ApplicationUserDto)">
+            <summary>
+            Update işlemi için asenkron metodun kullanılması gerektiğini bildiriyoruz.
+            </summary>
+            <param name="item">Update edilecek kullanıcı</param>
+            <returns></returns>
+        </member>
+        <member name="M:EA.Application.WebApi.Controllers.UserController.DeleteById(System.Guid)">
+            <summary>
+            Asenkron silme işleminin kullanılması gerektiğini belirtiyoruz.
+            </summary>
+            <param name="id">Silinmek istenen kaydın Id bilgisi</param>
+            <returns></returns>
+        </member>
+        <member name="M:EA.Application.WebApi.Controllers.UserController.DeleteByIdAsync(System.Guid)">
+            <summary>
+            Silme işlemini yapmak için Id gönderilir ise bu metoddan yararlanıyoruz.
+            </summary>
+            <param name="id">Silinecek kaydın Id bilgisi</param>
+            <returns></returns>
+        </member>
+        <member name="M:EA.Application.WebApi.Controllers.UserController.Delete(EA.Application.Dto.DTOS.ApplicationUserDto)">
+            <summary>
+            Asenkron silme işleminin kullanılması gerektiğini belirtiyoruz.
+            </summary>
+            <param name="item">Silinecek kayıt</param>
+            <returns></returns>
+        </member>
+        <member name="M:EA.Application.WebApi.Controllers.UserController.DeleteAsync(EA.Application.Dto.DTOS.ApplicationUserDto)">
+            <summary>
+            Silme işlemini async metot ile yapıyoruz.
+            </summary>
+            <param name="item">Silinmek istenen kayıt</param>
+            <returns></returns>
+        </member>
+        <member name="M:EA.Application.WebApi.Controllers.UserController.Find(System.Guid)">
+            <summary>
+            Kullanıcının dilini ve rollerini yüklemek için include işlemi yapıyoruz.
+            </summary>
+            <param name="id">İstenen kaydın Id bilgisi</param>
+            <returns></returns>
+        </member>
+        <member name="M:EA.Application.WebApi.Controllers.UserController.GetAll">
+            <summary>
+            Kullanıcı listesini gerekli include işlemleri yaparak döndürüyoruz. 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EA.Application.WebApi.Controllers.UserController.ChangePasswordAsAdminAsync(EA.Application.WebApi.VM.ChangePasswordModel)">
+            <summary>
+            Admin yetkisine sahip kişiler kullanıcıların önceki şifrelerini bilmeseler bile şifrelerini resetleyip değiştirebilir. 
+            Bu metot eski şifreyi sormadan şifre resetleme işlemi yapar
+            </summary>
+            <param name="model">Şifre değiştirme için gerekli bilgileri içeren model</param>
+            <returns></returns>
+        </member>
+        <member name="M:EA.Application.WebApi.Controllers.UserController.ChangePasswordAsync(EA.Application.WebApi.VM.ChangePasswordModel)">
+            <summary>
+            Kullanıcıların kendi şifrelerini değiştirmeleri için bu metot kullanılır. Bu metot şifrenin değiştirilebilmesi için eski şifreyi ister.
+            </summary>
+            <param name="model">Şifre değiştirme için gerekli bilgileri içeren model</param>
+            <returns></returns>
+        </member>
+        <member name="M:EA.Application.WebApi.Controllers.UserController.DeleteUserRoleAsync(System.Guid,System.Guid)">
+            <summary>
+            Kullanıcının rollerini silmek için kullanılır
+            </summary>
+            <param name="userid">Rolü silinecek kullanıcı Id si</param>
+            <param name="roleid">Kullanıcıdan silinecek rol Id si</param>
+            <returns></returns>
+        </member>
+        <member name="T:EA.Application.WebApi.VM.LoginModel">
+            <summary>
+            Login için kullanıcıdan istenen bilgileri taşır
+            </summary>
+        </member>
+        <member name="P:EA.Application.WebApi.VM.LoginModel.Email">
+            <summary>
+            Email alanı zorunludur 
+            </summary>
+        </member>
+        <member name="P:EA.Application.WebApi.VM.LoginModel.Password">
+            <summary>
+            Parola alanı zorunludur
+            </summary>
+        </member>
+        <member name="T:EA.Application.WebApi.VM.TokenModel">
+            <summary>
+            Kullanıcıya geri döneceğimiz token bilgilerini taşıyacak
+            </summary>
+        </member>
+        <member name="P:EA.Application.WebApi.VM.TokenModel.Token">
+            <summary>
+            Object türünden token 
+            </summary>
+        </member>
+        <member name="P:EA.Application.WebApi.VM.TokenModel.UserDto">
+            <summary>
+            Kullanıcının diğer bilgileri 
+            </summary>
+        </member>
+    </members>
+</doc>

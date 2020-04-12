@@ -1,0 +1,60 @@
+2020-04-13 01:18:36.182 +03:00 [Information] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager: User profile is available. Using 'C:\Users\ABS\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-04-13 01:18:36.476 +03:00 [Information] Microsoft.Hosting.Lifetime: Application started. Press Ctrl+C to shut down.
+2020-04-13 01:18:36.511 +03:00 [Information] Microsoft.Hosting.Lifetime: Hosting environment: Development
+2020-04-13 01:18:36.514 +03:00 [Information] Microsoft.Hosting.Lifetime: Content root path: D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.WebApi
+2020-04-13 01:18:36.536 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/  
+2020-04-13 01:18:36.567 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: No cached response available for this request.
+2020-04-13 01:18:36.927 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2020-04-13 01:18:36.993 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 458.5905ms 404 text/plain
+2020-04-13 01:18:37.479 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/favicon.ico  
+2020-04-13 01:18:37.487 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: No cached response available for this request.
+2020-04-13 01:18:37.500 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2020-04-13 01:18:37.506 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 23.7647ms 404 text/plain
+2020-04-13 01:18:56.390 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/swagger  
+2020-04-13 01:18:56.398 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: No cached response available for this request.
+2020-04-13 01:18:56.401 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2020-04-13 01:18:56.405 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 20.4484ms 301 
+2020-04-13 01:18:56.411 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/swagger/index.html  
+2020-04-13 01:18:56.416 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: No cached response available for this request.
+2020-04-13 01:18:56.542 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2020-04-13 01:18:56.545 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 134.9156ms 200 text/html;charset=utf-8
+2020-04-13 01:18:56.567 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/swagger/swagger-ui.css  
+2020-04-13 01:18:56.572 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/swagger/swagger-ui-bundle.js  
+2020-04-13 01:18:56.576 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/swagger/swagger-ui-standalone-preset.js  
+2020-04-13 01:18:56.581 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: No cached response available for this request.
+2020-04-13 01:18:56.585 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: No cached response available for this request.
+2020-04-13 01:18:56.588 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: No cached response available for this request.
+2020-04-13 01:18:56.820 +03:00 [Information] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware: Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2020-04-13 01:18:56.827 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2020-04-13 01:18:56.834 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 265.8696ms 200 text/css
+2020-04-13 01:18:56.924 +03:00 [Information] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware: Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2020-04-13 01:18:56.928 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2020-04-13 01:18:56.932 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 358.1146ms 200 application/javascript
+2020-04-13 01:18:56.966 +03:00 [Information] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware: Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2020-04-13 01:18:56.968 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2020-04-13 01:18:56.970 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 404.8192ms 200 application/javascript
+2020-04-13 01:18:57.276 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/swagger/CoreSwagger/swagger.json  
+2020-04-13 01:18:57.280 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: No cached response available for this request.
+2020-04-13 01:18:57.291 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2020-04-13 01:18:57.296 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 19.413500000000003ms 404 text/plain
+2020-04-13 01:18:57.352 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/swagger/favicon-32x32.png  
+2020-04-13 01:18:57.355 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: No cached response available for this request.
+2020-04-13 01:18:57.396 +03:00 [Information] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware: Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2020-04-13 01:18:57.398 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2020-04-13 01:18:57.401 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 49.3995ms 200 image/png
+2020-04-13 01:21:08.684 +03:00 [Information] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager: User profile is available. Using 'C:\Users\ABS\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-04-13 01:21:08.926 +03:00 [Information] Microsoft.Hosting.Lifetime: Application started. Press Ctrl+C to shut down.
+2020-04-13 01:21:08.937 +03:00 [Information] Microsoft.Hosting.Lifetime: Hosting environment: Development
+2020-04-13 01:21:08.943 +03:00 [Information] Microsoft.Hosting.Lifetime: Content root path: D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.WebApi
+2020-04-13 01:21:08.979 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/  
+2020-04-13 01:21:09.006 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: No cached response available for this request.
+2020-04-13 01:21:09.181 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2020-04-13 01:21:09.214 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 237.8424ms 404 text/plain
+2020-04-13 01:21:15.457 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/swagger/index.html  
+2020-04-13 01:21:15.475 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: No cached response available for this request.
+2020-04-13 01:21:15.522 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2020-04-13 01:21:15.526 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 70.5609ms 200 text/html;charset=utf-8
+2020-04-13 01:21:15.932 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/swagger/v1/swagger.json  
+2020-04-13 01:21:15.939 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: No cached response available for this request.
+2020-04-13 01:21:16.286 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2020-04-13 01:21:16.288 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 357.53880000000004ms 200 application/json;charset=utf-8
