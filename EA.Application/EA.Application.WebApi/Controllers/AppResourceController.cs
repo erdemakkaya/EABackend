@@ -30,14 +30,14 @@ namespace EA.Application.WebApi.Controllers
         /// </summary>
         /// <param name="item"></param>
         /// <returns></returns>
-        public override ApiResult<AppResourceDto> Add([FromBody] AppResourceDto item)
+        public override ApiResult<string> Add([FromBody] AppResourceDto item)
         {
             var result = base.Add(item);
             _uow.SaveChanges(false);
             return result;
         }
 
-        public override ApiResult<AppResourceDto> Update([FromBody] AppResourceDto item)
+        public override ApiResult<string> Update([FromBody] AppResourceDto item)
         {
             var result = base.Update(item);
             _uow.SaveChanges(true);
@@ -66,16 +66,12 @@ namespace EA.Application.WebApi.Controllers
         /// <param name="LanguageId">İstenen dil</param>
         /// <returns></returns>
         [HttpGet("GetResourcesByLanguage")]
-        //response cache'in bu şekilde uygulanması bir AOP örneğidir, client bazında ve 120 saniye boyunca 
         [ResponseCache(Duration = 120, Location = ResponseCacheLocation.Client)]
         public ApiResult<List<AppResourceDto>> GetResourcesByLanguage(Guid LanguageId)
         {
-            //Önce bellekte bu veri var mı diye anahtar ile kontrol ediyoruz var ise veritabanına hiç gitmeyeceğiz
             if (!_memoryCache.TryGetValue(LanguageId, out List<AppResourceDto> ResourceList))
             {
-                //bellekte veri yok ise veritabanında verileri alıp cacheleme yapıyoruz
                 ResourceList = GetQueryable().Where(x => x.LanguageId == LanguageId).ToList().Select(x => _mapper.Map<AppResourceDto>(x)).ToList();
-                //cache süresi ve önemi 
                 var cacheEntryOptions = new MemoryCacheEntryOptions()
                             .SetPriority(CacheItemPriority.Normal)
                             .SetSlidingExpiration(TimeSpan.FromDays(1));

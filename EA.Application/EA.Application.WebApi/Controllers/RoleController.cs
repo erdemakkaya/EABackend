@@ -37,7 +37,7 @@ namespace EA.Application.WebApi.Controllers
         }
         #endregion
 
-        public override async Task<ApiResult<ApplicationRoleDto>> AddAsync(ApplicationRoleDto item)
+        public override async Task<ApiResult<string>> AddAsync(ApplicationRoleDto item)
         {
             
             var identityResult = new IdentityResult();
@@ -49,11 +49,11 @@ namespace EA.Application.WebApi.Controllers
                 identityResult = await _roleManager.CreateAsync(role).ConfigureAwait(false);
                 sbErrors.Append(String.Join(",", identityResult.Errors.Select(x => x.Code).ToList()));
 
-                var result = new ApiResult<ApplicationRoleDto>
+                var result = new ApiResult<string>
                 {
                     StatusCode = (identityResult.Succeeded ? StatusCodes.Status200OK : StatusCodes.Status406NotAcceptable),
                     Message = (identityResult.Succeeded ? "Role Added Successfully." : sbErrors.ToString()),
-                    Data = identityResult.Succeeded ? _mapper.Map<ApplicationRoleDto>(role):null
+                    Data =null
             };
 
                 _logger.LogInformation($"Add Role with roleId:{role.Id } role Name:{item.Name} role Desc:{item.Description} result:{result.Message}");
@@ -63,7 +63,7 @@ namespace EA.Application.WebApi.Controllers
             {
                 _logger.LogError($"Role Add : name:{item.Name} desc:{item.Description} result:Error - {ex.Message}");
 
-                return new ApiResult<ApplicationRoleDto>
+                return new ApiResult<string>
                 {
                     StatusCode = StatusCodes.Status500InternalServerError,
                     Message = $"Error:{ex.Message}",

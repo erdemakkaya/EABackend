@@ -22,6 +22,7 @@ namespace EA.Application.WebApi.Controllers
     [Route("Customer")]
     public class CustomerController : ApiBase<Customer, CustomerDto, CustomerController>
     {
+        
         public CustomerController(IServiceProvider service,IMapper mapper) : base(service,mapper)
         {
         }
@@ -62,14 +63,14 @@ namespace EA.Application.WebApi.Controllers
         /// </summary>
         /// <param name="item"></param>
         /// <returns></returns>
-        public override ApiResult<CustomerDto> Add([FromBody] CustomerDto item)
+        public override ApiResult<string> Add([FromBody] CustomerDto item)
         {
             var result = base.Add(item);
             _uow.SaveChanges(false);
             return result;
         }
 
-        public override ApiResult<CustomerDto> Update([FromBody] CustomerDto item)
+        public override ApiResult<string> Update([FromBody] CustomerDto item)
         {
             var result = base.Update(item);
             _uow.SaveChanges(true);

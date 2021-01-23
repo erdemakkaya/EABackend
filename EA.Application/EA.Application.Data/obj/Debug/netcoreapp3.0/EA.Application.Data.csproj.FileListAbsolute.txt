@@ -34,6 +34,8 @@ D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Data\bin\D
 D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Data\obj\Debug\netcoreapp3.0\EA.Application.Data.csprojAssemblyReference.cache
 D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Data\obj\Debug\netcoreapp3.0\EA.Application.Data.AssemblyInfoInputs.cache
 D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Data\obj\Debug\netcoreapp3.0\EA.Application.Data.AssemblyInfo.cs
+D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Data\obj\Debug\netcoreapp3.0\EA.Application.Data.csproj.CoreCompileInputs.cache
 D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Data\obj\Debug\netcoreapp3.0\EA.Application.Data.csproj.CopyComplete
 D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Data\obj\Debug\netcoreapp3.0\EA.Application.Data.dll
 D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Data\obj\Debug\netcoreapp3.0\EA.Application.Data.pdb
+D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Data\obj\Debug\netcoreapp3.0\EA.Application.Data.genruntimeconfig.cache

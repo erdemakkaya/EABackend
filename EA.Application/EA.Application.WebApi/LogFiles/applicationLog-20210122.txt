@@ -1,0 +1,220 @@
+2021-01-22 21:31:29.924 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-01-22 21:31:33.060 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-01-22 21:31:33.194 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-01-22 21:31:33.232 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2021-01-22 21:31:33.339 +03:00 [Information] Microsoft.EntityFrameworkCore.Migrations: No migrations were applied. The database is already up to date.
+2021-01-22 21:31:33.610 +03:00 [Information] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager: User profile is available. Using 'C:\Users\ABS\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-01-22 21:31:33.836 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/  
+2021-01-22 21:31:33.865 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: No cached response available for this request.
+2021-01-22 21:31:34.085 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2021-01-22 21:31:34.126 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 292.4845ms 404 text/plain
+2021-01-22 21:31:34.488 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/favicon.ico  
+2021-01-22 21:31:34.495 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: No cached response available for this request.
+2021-01-22 21:31:34.501 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2021-01-22 21:31:34.514 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished in 26.2008ms 404 text/plain
+2021-01-22 21:37:37.277 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-01-22 21:37:38.479 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-01-22 21:37:38.522 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-01-22 21:37:38.535 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2021-01-22 21:37:38.557 +03:00 [Information] Microsoft.EntityFrameworkCore.Migrations: No migrations were applied. The database is already up to date.
+2021-01-22 21:37:38.805 +03:00 [Information] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager: User profile is available. Using 'C:\Users\ABS\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-01-22 21:37:39.020 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/ - -
+2021-01-22 21:37:39.050 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: No cached response available for this request.
+2021-01-22 21:37:39.260 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2021-01-22 21:37:39.306 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished HTTP/1.1 GET http://localhost:51494/ - - - 404 - text/plain 285.9683ms
+2021-01-22 21:38:18.309 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/Language/GetAll - -
+2021-01-22 21:38:18.366 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished HTTP/1.1 GET http://localhost:51494/Language/GetAll - - - 404 - text/plain 57.7632ms
+2021-01-22 21:38:41.870 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 POST http://localhost:51494/Authentication/LoginAsync application/json 58
+2021-01-22 21:38:41.904 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Route matched with {action = "Login", controller = "Token"}. Executing controller action with signature System.Threading.Tasks.Task`1[EA.Application.Common.Api.ApiResult] LoginAsync(EA.Application.WebApi.VM.LoginModel) on controller EA.Application.WebApi.Controllers.TokenController (EA.Application.WebApi).
+2021-01-22 21:38:41.912 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-01-22 21:38:42.337 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[@__normalizedEmail_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreateDate], [u].[Creator], [u].[DeleterUserId], [u].[DeletionTime], [u].[Email], [u].[EmailConfirmed], [u].[IsDeleted], [u].[LanguageId], [u].[LastModificationTime], [u].[LastModifierUserId], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[Title], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE (([u].[NormalizedEmail] = @__normalizedEmail_0) AND ([u].[NormalizedEmail] IS NOT NULL AND @__normalizedEmail_0 IS NOT NULL)) OR ([u].[NormalizedEmail] IS NULL AND @__normalizedEmail_0 IS NULL)
+2021-01-22 21:38:43.106 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor: Executing ObjectResult, writing value of type 'EA.Application.Common.Api.ApiResult'.
+2021-01-22 21:38:43.170 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Executed action EA.Application.WebApi.Controllers.TokenController.LoginAsync (EA.Application.WebApi) in 1256.2931ms
+2021-01-22 21:38:43.176 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished HTTP/1.1 POST http://localhost:51494/Authentication/LoginAsync application/json 58 - 200 - application/json;+charset=utf-8 1306.5026ms
+2021-01-22 21:39:03.290 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/Language/GetAll - -
+2021-01-22 21:39:03.294 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished HTTP/1.1 GET http://localhost:51494/Language/GetAll - - - 404 - text/plain 4.2387ms
+2021-01-22 21:39:21.158 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/Language/GetAll - -
+2021-01-22 21:39:21.162 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished HTTP/1.1 GET http://localhost:51494/Language/GetAll - - - 404 - text/plain 3.0569ms
+2021-01-22 21:39:51.772 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/Language/Get - -
+2021-01-22 21:39:51.776 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished HTTP/1.1 GET http://localhost:51494/Language/Get - - - 404 - text/plain 3.4077ms
+2021-01-22 21:40:28.330 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/Language/GetAll - -
+2021-01-22 21:40:28.342 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished HTTP/1.1 GET http://localhost:51494/Language/GetAll - - - 404 - text/plain 4.1061ms
+2021-01-22 21:41:04.183 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/Language/GetAll - -
+2021-01-22 21:41:04.186 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished HTTP/1.1 GET http://localhost:51494/Language/GetAll - - - 404 - text/plain 3.2107ms
+2021-01-22 21:45:55.576 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-01-22 21:45:56.381 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-01-22 21:45:56.440 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-01-22 21:45:56.458 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2021-01-22 21:45:56.487 +03:00 [Information] Microsoft.EntityFrameworkCore.Migrations: No migrations were applied. The database is already up to date.
+2021-01-22 21:45:56.732 +03:00 [Information] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager: User profile is available. Using 'C:\Users\ABS\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-01-22 21:45:56.861 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/ - -
+2021-01-22 21:45:56.884 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: No cached response available for this request.
+2021-01-22 21:45:57.086 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Route matched with {action = "GetAll", controller = "AppResource"}. Executing controller action with signature EA.Application.Common.Api.ApiResult`1[System.Collections.Generic.List`1[EA.Application.Dto.DTOS.AppResourceDto]] GetAll() on controller EA.Application.WebApi.Controllers.AppResourceController (EA.Application.WebApi).
+2021-01-22 21:45:57.519 +03:00 [Information] Microsoft.AspNetCore.Authorization.DefaultAuthorizationService: Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2021-01-22 21:45:57.543 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2021-01-22 21:45:57.549 +03:00 [Information] Microsoft.AspNetCore.Mvc.ChallengeResult: Executing ChallengeResult with authentication schemes (Bearer).
+2021-01-22 21:45:57.556 +03:00 [Information] Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler: AuthenticationScheme: Bearer was challenged.
+2021-01-22 21:45:57.566 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Executed action EA.Application.WebApi.Controllers.AppResourceController.GetAll (EA.Application.WebApi) in 470.0629ms
+2021-01-22 21:45:57.572 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2021-01-22 21:45:57.606 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished HTTP/1.1 GET http://localhost:51494/ - - - 401 - text/plain 747.0341ms
+2021-01-22 22:10:40.953 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 3.0.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-01-22 22:10:41.809 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-01-22 22:10:41.860 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-01-22 22:10:41.881 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2021-01-22 22:10:41.920 +03:00 [Information] Microsoft.EntityFrameworkCore.Migrations: No migrations were applied. The database is already up to date.
+2021-01-22 22:10:42.178 +03:00 [Information] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager: User profile is available. Using 'C:\Users\ABS\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-01-22 22:10:42.401 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/Language/GetAll - -
+2021-01-22 22:10:42.401 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/ - -
+2021-01-22 22:10:42.439 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: No cached response available for this request.
+2021-01-22 22:10:42.632 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Route matched with {action = "GetAll", controller = "AppResource"}. Executing controller action with signature EA.Application.Common.Api.ApiResult`1[System.Collections.Generic.List`1[EA.Application.Dto.DTOS.AppResourceDto]] GetAll() on controller EA.Application.WebApi.Controllers.AppResourceController (EA.Application.WebApi).
+2021-01-22 22:10:42.645 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished HTTP/1.1 GET http://localhost:51494/Language/GetAll - - - 404 - text/plain 247.5690ms
+2021-01-22 22:10:42.968 +03:00 [Information] Microsoft.AspNetCore.Authorization.DefaultAuthorizationService: Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2021-01-22 22:10:42.973 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2021-01-22 22:10:42.981 +03:00 [Information] Microsoft.AspNetCore.Mvc.ChallengeResult: Executing ChallengeResult with authentication schemes (Bearer).
+2021-01-22 22:10:42.987 +03:00 [Information] Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler: AuthenticationScheme: Bearer was challenged.
+2021-01-22 22:10:42.998 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Executed action EA.Application.WebApi.Controllers.AppResourceController.GetAll (EA.Application.WebApi) in 355.1244ms
+2021-01-22 22:10:43.004 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2021-01-22 22:10:43.009 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished HTTP/1.1 GET http://localhost:51494/ - - - 401 - text/plain 612.5260ms
+2021-01-22 22:11:12.893 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/Language/GetAll - -
+2021-01-22 22:11:12.899 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished HTTP/1.1 GET http://localhost:51494/Language/GetAll - - - 404 - text/plain 4.9474ms
+2021-01-22 22:12:27.172 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/Language/GetAll - -
+2021-01-22 22:12:27.176 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished HTTP/1.1 GET http://localhost:51494/Language/GetAll - - - 404 - text/plain 3.8431ms
+2021-01-22 22:13:22.049 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/Language/GetAll - -
+2021-01-22 22:13:22.053 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished HTTP/1.1 GET http://localhost:51494/Language/GetAll - - - 404 - text/plain 3.8182ms
+2021-01-22 22:13:43.603 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/Language/GetAll - -
+2021-01-22 22:13:43.607 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished HTTP/1.1 GET http://localhost:51494/Language/GetAll - - - 404 - text/plain 4.1198ms
+2021-01-22 22:54:17.385 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-01-22 22:54:18.080 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executed DbCommand (17ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+2021-01-22 22:54:18.113 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executed DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-01-22 22:54:18.121 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+2021-01-22 22:54:18.124 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-01-22 22:54:18.155 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executed DbCommand (17ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2021-01-22 22:54:18.175 +03:00 [Information] Microsoft.EntityFrameworkCore.Migrations: No migrations were applied. The database is already up to date.
+2021-01-22 22:54:18.331 +03:00 [Information] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager: User profile is available. Using 'C:\Users\ABS\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-01-22 22:54:18.467 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/ - -
+2021-01-22 22:54:18.492 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: No cached response available for this request.
+2021-01-22 22:54:18.641 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Route matched with {action = "GetAll", controller = "AppResource"}. Executing controller action with signature EA.Application.Common.Api.ApiResult`1[System.Collections.Generic.List`1[EA.Application.Dto.DTOS.AppResourceDto]] GetAll() on controller EA.Application.WebApi.Controllers.AppResourceController (EA.Application.WebApi).
+2021-01-22 22:54:18.872 +03:00 [Information] Microsoft.AspNetCore.Authorization.DefaultAuthorizationService: Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2021-01-22 22:54:18.876 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2021-01-22 22:54:18.880 +03:00 [Information] Microsoft.AspNetCore.Mvc.ChallengeResult: Executing ChallengeResult with authentication schemes (Bearer).
+2021-01-22 22:54:18.888 +03:00 [Information] Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler: AuthenticationScheme: Bearer was challenged.
+2021-01-22 22:54:18.896 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Executed action EA.Application.WebApi.Controllers.AppResourceController.GetAll (EA.Application.WebApi) in 247.3752ms
+2021-01-22 22:54:18.902 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2021-01-22 22:54:18.932 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished HTTP/1.1 GET http://localhost:51494/ - - - 401 - text/plain 467.2522ms
+2021-01-22 23:38:56.184 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-01-22 23:38:57.154 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executed DbCommand (35ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+2021-01-22 23:38:57.208 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executed DbCommand (33ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-01-22 23:38:57.215 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+2021-01-22 23:38:57.218 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-01-22 23:38:57.240 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2021-01-22 23:38:57.274 +03:00 [Information] Microsoft.EntityFrameworkCore.Migrations: No migrations were applied. The database is already up to date.
+2021-01-22 23:38:57.483 +03:00 [Information] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager: User profile is available. Using 'C:\Users\ABS\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-01-22 23:38:57.650 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/ - -
+2021-01-22 23:38:57.682 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: No cached response available for this request.
+2021-01-22 23:38:57.920 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Route matched with {action = "GetAll", controller = "AppResource"}. Executing controller action with signature EA.Application.Common.Api.ApiResult`1[System.Collections.Generic.List`1[EA.Application.Dto.DTOS.AppResourceDto]] GetAll() on controller EA.Application.WebApi.Controllers.AppResourceController (EA.Application.WebApi).
+2021-01-22 23:38:58.389 +03:00 [Information] Microsoft.AspNetCore.Authorization.DefaultAuthorizationService: Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2021-01-22 23:38:58.394 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2021-01-22 23:38:58.420 +03:00 [Information] Microsoft.AspNetCore.Mvc.ChallengeResult: Executing ChallengeResult with authentication schemes (Bearer).
+2021-01-22 23:38:58.438 +03:00 [Information] Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler: AuthenticationScheme: Bearer was challenged.
+2021-01-22 23:38:58.451 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Executed action EA.Application.WebApi.Controllers.AppResourceController.GetAll (EA.Application.WebApi) in 518.1748ms
+2021-01-22 23:38:58.462 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2021-01-22 23:38:58.505 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished HTTP/1.1 GET http://localhost:51494/ - - - 401 - text/plain 857.3264ms
+2021-01-22 23:38:58.927 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/favicon.ico - -
+2021-01-22 23:38:58.935 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: No cached response available for this request.
+2021-01-22 23:38:58.955 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2021-01-22 23:38:58.964 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished HTTP/1.1 GET http://localhost:51494/favicon.ico - - - 404 - text/plain 58.5296ms
+2021-01-22 23:39:52.953 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 POST http://localhost:51494/Authentication/LoginAsync application/json 58
+2021-01-22 23:39:52.976 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Route matched with {action = "Login", controller = "Token"}. Executing controller action with signature System.Threading.Tasks.Task`1[EA.Application.Common.Api.ApiResult] LoginAsync(EA.Application.WebApi.VM.LoginModel) on controller EA.Application.WebApi.Controllers.TokenController (EA.Application.WebApi).
+2021-01-22 23:39:52.982 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-01-22 23:39:53.463 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executed DbCommand (130ms) [Parameters=[@__normalizedEmail_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreateDate], [u].[Creator], [u].[DeleterUserId], [u].[DeletionTime], [u].[Email], [u].[EmailConfirmed], [u].[IsDeleted], [u].[LanguageId], [u].[LastModificationTime], [u].[LastModifierUserId], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[Title], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0
+2021-01-22 23:39:53.828 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor: Executing ObjectResult, writing value of type 'EA.Application.Common.Api.ApiResult'.
+2021-01-22 23:39:53.881 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Executed action EA.Application.WebApi.Controllers.TokenController.LoginAsync (EA.Application.WebApi) in 902.5413ms
+2021-01-22 23:39:53.891 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished HTTP/1.1 POST http://localhost:51494/Authentication/LoginAsync application/json 58 - 200 - application/json;+charset=utf-8 937.2473ms
+2021-01-22 23:40:07.272 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/Language/GetAll - -
+2021-01-22 23:40:07.277 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished HTTP/1.1 GET http://localhost:51494/Language/GetAll - - - 404 - text/plain 4.8383ms
+2021-01-22 23:41:11.766 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-01-22 23:41:12.451 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executed DbCommand (17ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+2021-01-22 23:41:12.490 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executed DbCommand (23ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-01-22 23:41:12.496 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+2021-01-22 23:41:12.500 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2021-01-22 23:41:12.515 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2021-01-22 23:41:12.535 +03:00 [Information] Microsoft.EntityFrameworkCore.Migrations: No migrations were applied. The database is already up to date.
+2021-01-22 23:41:12.687 +03:00 [Information] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager: User profile is available. Using 'C:\Users\ABS\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-01-22 23:41:12.837 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/ - -
+2021-01-22 23:41:12.860 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: No cached response available for this request.
+2021-01-22 23:41:12.999 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Route matched with {action = "GetAll", controller = "AppResource"}. Executing controller action with signature EA.Application.Common.Api.ApiResult`1[System.Collections.Generic.List`1[EA.Application.Dto.DTOS.AppResourceDto]] GetAll() on controller EA.Application.WebApi.Controllers.AppResourceController (EA.Application.WebApi).
+2021-01-22 23:41:13.241 +03:00 [Information] Microsoft.AspNetCore.Authorization.DefaultAuthorizationService: Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2021-01-22 23:41:13.245 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2021-01-22 23:41:13.251 +03:00 [Information] Microsoft.AspNetCore.Mvc.ChallengeResult: Executing ChallengeResult with authentication schemes (Bearer).
+2021-01-22 23:41:13.258 +03:00 [Information] Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler: AuthenticationScheme: Bearer was challenged.
+2021-01-22 23:41:13.268 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Executed action EA.Application.WebApi.Controllers.AppResourceController.GetAll (EA.Application.WebApi) in 259.3519ms
+2021-01-22 23:41:13.274 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2021-01-22 23:41:13.301 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished HTTP/1.1 GET http://localhost:51494/ - - - 401 - text/plain 465.1929ms
+2021-01-22 23:41:13.538 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/favicon.ico - -
+2021-01-22 23:41:13.542 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: No cached response available for this request.
+2021-01-22 23:41:13.546 +03:00 [Information] Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware: The response could not be cached for this request.
+2021-01-22 23:41:13.552 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished HTTP/1.1 GET http://localhost:51494/favicon.ico - - - 404 - text/plain 13.6563ms
+2021-01-22 23:41:36.895 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 POST http://localhost:51494/Authentication/LoginAsync application/json 58
+2021-01-22 23:41:36.923 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Route matched with {action = "Login", controller = "Token"}. Executing controller action with signature System.Threading.Tasks.Task`1[EA.Application.Common.Api.ApiResult] LoginAsync(EA.Application.WebApi.VM.LoginModel) on controller EA.Application.WebApi.Controllers.TokenController (EA.Application.WebApi).
+2021-01-22 23:41:36.930 +03:00 [Information] Microsoft.EntityFrameworkCore.Infrastructure: Entity Framework Core 5.0.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-01-22 23:41:37.364 +03:00 [Information] Microsoft.EntityFrameworkCore.Database.Command: Executed DbCommand (130ms) [Parameters=[@__normalizedEmail_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreateDate], [u].[Creator], [u].[DeleterUserId], [u].[DeletionTime], [u].[Email], [u].[EmailConfirmed], [u].[IsDeleted], [u].[LanguageId], [u].[LastModificationTime], [u].[LastModifierUserId], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[Title], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0
+2021-01-22 23:41:37.676 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor: Executing ObjectResult, writing value of type 'EA.Application.Common.Api.ApiResult'.
+2021-01-22 23:41:37.724 +03:00 [Information] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker: Executed action EA.Application.WebApi.Controllers.TokenController.LoginAsync (EA.Application.WebApi) in 798.9112ms
+2021-01-22 23:41:37.732 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished HTTP/1.1 POST http://localhost:51494/Authentication/LoginAsync application/json 58 - 200 - application/json;+charset=utf-8 835.6713ms
+2021-01-22 23:41:50.320 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 GET http://localhost:51494/Language/GetAll - -
+2021-01-22 23:41:50.326 +03:00 [Information] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished HTTP/1.1 GET http://localhost:51494/Language/GetAll - - - 404 - text/plain 5.9087ms

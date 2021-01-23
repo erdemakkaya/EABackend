@@ -34,6 +34,7 @@ D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Dto\bin\De
 D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Dto\obj\Debug\netcoreapp3.0\EA.Application.Dto.csprojAssemblyReference.cache
 D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Dto\obj\Debug\netcoreapp3.0\EA.Application.Dto.AssemblyInfoInputs.cache
 D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Dto\obj\Debug\netcoreapp3.0\EA.Application.Dto.AssemblyInfo.cs
+D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Dto\obj\Debug\netcoreapp3.0\EA.Application.Dto.csproj.CoreCompileInputs.cache
 D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Dto\obj\Debug\netcoreapp3.0\EA.Application.Dto.csproj.CopyComplete
 D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Dto\obj\Debug\netcoreapp3.0\EA.Application.Dto.dll
 D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Dto\obj\Debug\netcoreapp3.0\EA.Application.Dto.pdb

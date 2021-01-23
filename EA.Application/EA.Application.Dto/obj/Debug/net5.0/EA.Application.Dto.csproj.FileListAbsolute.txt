@@ -1,0 +1,17 @@
+D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Dto\bin\Debug\net5.0\EA.Application.Dto.deps.json
+D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Dto\bin\Debug\net5.0\EA.Application.Dto.dll
+D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Dto\bin\Debug\net5.0\ref\EA.Application.Dto.dll
+D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Dto\bin\Debug\net5.0\EA.Application.Dto.pdb
+D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Dto\bin\Debug\net5.0\EA.Application.Common.dll
+D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Dto\bin\Debug\net5.0\EA.Application.Data.dll
+D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Dto\bin\Debug\net5.0\EA.Application.Common.pdb
+D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Dto\bin\Debug\net5.0\EA.Application.Data.pdb
+D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Dto\obj\Debug\net5.0\EA.Application.Dto.csprojAssemblyReference.cache
+D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Dto\obj\Debug\net5.0\EA.Application.Dto.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Dto\obj\Debug\net5.0\EA.Application.Dto.AssemblyInfoInputs.cache
+D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Dto\obj\Debug\net5.0\EA.Application.Dto.AssemblyInfo.cs
+D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Dto\obj\Debug\net5.0\EA.Application.Dto.csproj.CoreCompileInputs.cache
+D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Dto\obj\Debug\net5.0\EA.Application.Dto.csproj.CopyComplete
+D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Dto\obj\Debug\net5.0\EA.Application.Dto.dll
+D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Dto\obj\Debug\net5.0\ref\EA.Application.Dto.dll
+D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Dto\obj\Debug\net5.0\EA.Application.Dto.pdb

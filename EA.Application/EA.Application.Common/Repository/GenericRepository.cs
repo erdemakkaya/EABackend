@@ -2,112 +2,136 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using EA.Application.Common.Enttiy;
 
 namespace EA.Application.Common.Repository
 {
-    /// <summary>
-    /// Daha önce oluşturduğumuz IGenericRepository interface ini implemente eden sınıfımız
-    /// Interface üzerinde sadece metot imzalarını yani tanımlarını bildirmiştik.
-    /// Bu sınıf arayüzde belirttiğimiz imzalara sahip metotları uygulamak zorunda 
-    /// Generic olarak uygulanan Repository pattern tekrarlı kod yazmanın önüne geçerek kodun yönetilebilirliğini kolaylaştırmaktadır.
-    /// Bu sınıfın amacı oluşturduğumuz entitylerde yapılacak CRUD işlemlerin tek noktadan yönetilmesi.
-    /// Ancak dikkat ettiyseniz burada bir SaveChanges yani değişiklikleri veritabanına ilet komutu bulunmuyor
-    /// Bunun nedeni bizim o işlemi UnitofWork ile yapacak oluşumuz.
-    /// </summary>
-    /// <typeparam name="T">Üzerinde CRUD işlemlerin yapılacağı sınıf</typeparam>
-    public class GenericRepository<T> : IGenericRepository<T> where T : class,IEntity
+    public class GenericRepository<TDbContext, TEntity> : IRepository<TEntity>
+        where TDbContext : DbContext
+        where TEntity : class, IEntity
     {
-        #region Variables
-        //Bu sınıf içinde kullanılacak değişkenleri tanımlıyoruz
-        //Database işlemleri için DbContext tablo işlemleri için ise DbSet sınıfını kullanacağız
-        private DbContext _context;
-        private DbSet<T> _dbset;
-        #endregion
+        private readonly TDbContext _dbContext;
+        private readonly DbSet<TEntity> _dbset;
 
-        #region Constructor
-        /// <summary>
-        /// Yapıcı method bizim için Dependency Injection kullanarak DbContext örneği oluşturuyor.
-        /// </summary>
-        /// <param name="context"></param>
-        public GenericRepository(DbContext context)
+        public GenericRepository(TDbContext context)
         {
-            //Değişkenlere değer ataması yapıyoruz
-            _context = context;
-            _dbset = _context.Set<T>();
-        }
-        #endregion
-
-        #region GetterMethods
-        /// <summary>
-        /// Geri doğrudan dbSet nesnesini dönerek tablo içinde her işlemin yapılacağı bir IQueryable result'ı dönüyoruz.
-        /// </summary>
-        /// <returns></returns>
-        public IQueryable<T> GetAll()
-        {
-            return _dbset;
+            _dbContext = context;
+            _dbset = _dbContext.Set<TEntity>();
         }
 
-        /// <summary>
-        /// İstenen tipteki sınıfı gönderilen Guid tipinde Id parametresi ile arayan ve döndüren metot
-        /// </summary>
-        /// <param name="Id"></param>
-        /// <returns></returns>
-        public T Find(Guid Id)
-        {
-            return _dbset.Find(Id);
-        }
-        #endregion
-
-        #region SetterMethods
-        /// <summary>
-        /// Gönderilen entityToUpdate nesnesinin veritabanında update edilmesi için önce Attach ederek daha sonrada durumunu Modified yaparak kuyruğa alan metot
-        /// </summary>
-        /// <param name="entityToUpdate"></param>
-        public T Update(T entityToUpdate)
-        {
-            _dbset.Attach(entityToUpdate);
-            _context.Entry(entityToUpdate).State = EntityState.Modified;
-            return entityToUpdate;
-        }
-
-        /// <summary>
-        /// Gönderilen entity nesnesinin veritabanına eklenmesi için kuyruğa alan metot
-        /// </summary>
-        /// <param name="entity">Eklenmek istenen sınıfın örneği</param>
-        public T Add(T entity)
+        protected TDbContext Context => _dbContext;
+        public virtual void Insert(TEntity entity)
         {
             _dbset.Add(entity);
-            return entity;
+            _dbContext.SaveChanges();
         }
 
-        /// <summary>
-        /// Gönderilen Guid tipinde Id parametresi ile aranan kaydı bularak bunu model bekleyen Delete metotuna gönderir
-        /// Id üzerinden silme işlemi yapmak isteyen istemciler için tercih edilecektir.
-        /// Burada aynı isimle iki adet Delete metodu görüyoruz bu çok biçimlilik yani polimorfizmdir.
-        /// Metot isimleri ve döndürdükleri değerler aynı ancak bekledikleri parametre farklıdır bu nedenle derlenme ve çalışmas sırasında
-        /// aynı isimli olsalar dahi sorun yaşanmaz. Bu metodu kullanırken overloadlarında 2 seçenek görünecektir. 
-        /// </summary>
-        /// <param name="Id">Silinmesi istenen kaydın Guid tipinde Id bilgisi</param>
-        public void Delete(Guid Id)
+        public virtual void InsertRange(IEnumerable<TEntity> entities)
         {
-            Delete(Find(Id));
+            _dbset.AddRange(entities);
+            _dbContext.SaveChanges();
         }
 
-        /// <summary>
-        /// Kendisine gönderilen entityToDelete nesnesinin silinmesi için önce attach olup olmadığını kontrol ediyor eğer değil ise attach ederek
-        /// silinmesi için kuyruğa ekliyoruz. SaveChanges komutu gelene kadar bu silme işlemi gerçekleşmeyecek. O komutu da UnitodWork sınıfında vereceğiz.
-        /// </summary>
-        /// <param name="entityToDelete"></param>
-        public void Delete(T entityToDelete)
+        public virtual void Update(TEntity entity)
         {
-            if (_context.Entry(entityToDelete).State == EntityState.Detached)
+            //_dbset.Attach(entity); - audit kısmında orjinal ve değişen değerleri almamızda sorun oluyordu, commentlendi
+            _dbContext.Entry(entity).State = EntityState.Modified;
+            _dbContext.SaveChanges();
+        }
+
+        public virtual void InsertOrUpdate(TEntity entity)
+        {
+            if (_dbContext.Entry(entity).State == EntityState.Detached)
             {
-                _context.Attach(entityToDelete);
+                _dbset.Add(entity);
             }
-            _dbset.Remove(entityToDelete);
+            else
+            {
+                //_dbset.Attach(entity); - audit kısmında orjinal ve değişen değerleri almamızda sorun oluyordu, commentlendi
+                _dbContext.Entry(entity).State = EntityState.Modified;
+            }
+            _dbContext.SaveChanges();
         }
-        #endregion
+
+        public virtual void Delete(TEntity entity)
+        {
+            _dbset.Remove(entity);
+            _dbContext.SaveChanges();
+        }
+
+        public virtual void Delete(Expression<Func<TEntity, bool>> where)
+        {
+            var objects = _dbset.Where(where).AsEnumerable();
+            _dbset.RemoveRange(objects);
+            _dbContext.SaveChanges();
+        }
+
+        public virtual TEntity Get(Expression<Func<TEntity, bool>> where)
+        {
+            return _dbset.Where(where).FirstOrDefault();
+        }
+
+        public virtual TEntity Get(Expression<Func<TEntity, bool>> where, params Expression<Func<TEntity, IEntity>>[] include)
+        {
+            var q = _dbset.Where(where);
+            for (int i = 0; i < include.Length; i++)
+            {
+                q = q.Include(include[i]);
+            }
+            return q.FirstOrDefault();
+        }
+
+        public virtual TEntity Get(Expression<Func<TEntity, bool>> where, params string[] include)
+        {
+            var q = _dbset.Where(where);
+            for (int i = 0; i < include.Length; i++)
+            {
+                q = q.Include(include[i]);
+            }
+            return q.FirstOrDefault();
+        }
+
+        public virtual IQueryable<TEntity> GetMany(Expression<Func<TEntity, bool>> where = null)
+        {
+            return (where == null ? _dbset : _dbset.Where(where));
+        }
+
+        public virtual IQueryable<TEntity> GetMany(Expression<Func<TEntity, bool>> where, params Expression<Func<TEntity, IEntity>>[] include)
+        {
+            var q = GetMany(where);
+            for (int i = 0; i < include.Length; i++)
+            {
+                q = q.Include(include[i]);
+            }
+            return q;
+        }
+
+        public virtual IQueryable<TEntity> GetMany(Expression<Func<TEntity, bool>> where, params string[] include)
+        {
+            var q = GetMany(where);
+            for (int i = 0; i < include.Length; i++)
+            {
+                q = q.Include(include[i]);
+            }
+            return q;
+        }
+        public virtual IEnumerable<TEntity> GetAll()
+        {
+            return _dbset.ToList();
+        }
+
+        public TEntity Find(Guid id)
+        {
+            return _dbset.Find(id);
+        }
+
+        public void Delete(Guid id)
+        {
+            var entity = Find(id); 
+            _dbset.Remove(entity);
+        }
     }
 }

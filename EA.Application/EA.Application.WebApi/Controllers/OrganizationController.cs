@@ -30,14 +30,14 @@ namespace EA.Application.WebApi.Controllers
         /// </summary>
         /// <param name="item"></param>
         /// <returns></returns>
-        public override ApiResult<OrganizationDto> Add([FromBody] OrganizationDto item)
+        public override ApiResult<string> Add([FromBody] OrganizationDto item)
         {
             var result = base.Add(item);
             _uow.SaveChanges(false);
             return result;
         }
 
-        public override ApiResult<OrganizationDto> Update([FromBody] OrganizationDto item)
+        public override ApiResult<string> Update([FromBody] OrganizationDto item)
         {
             var result = base.Update(item);
             _uow.SaveChanges(true);

@@ -274,9 +274,11 @@ D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Test\bin\D
 D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Test\bin\Debug\netcoreapp3.0\zh-Hant\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
 D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Test\bin\Debug\netcoreapp3.0\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
 D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Test\bin\Debug\netcoreapp3.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Test\obj\Debug\netcoreapp3.0\EA.Application.Test.csprojAssemblyReference.cache
 D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Test\obj\Debug\netcoreapp3.0\EA.Application.Test.AssemblyInfoInputs.cache
 D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Test\obj\Debug\netcoreapp3.0\EA.Application.Test.AssemblyInfo.cs
+D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Test\obj\Debug\netcoreapp3.0\EA.Application.Test.csproj.CoreCompileInputs.cache
 D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Test\obj\Debug\netcoreapp3.0\EA.Application.Test.csproj.CopyComplete
 D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Test\obj\Debug\netcoreapp3.0\EA.Application.Test.dll
 D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Test\obj\Debug\netcoreapp3.0\EA.Application.Test.pdb
+D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Test\obj\Debug\netcoreapp3.0\EA.Application.Test.genruntimeconfig.cache
+D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Test\obj\Debug\netcoreapp3.0\EA.Application.Test.csprojAssemblyReference.cache

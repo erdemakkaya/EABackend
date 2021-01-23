@@ -5,13 +5,13 @@ VisualStudioVersion = 16.0.29503.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EA.Application.Common", "EA.Application.Common\EA.Application.Common.csproj", "{78D0B863-67C0-4737-BE02-2D760D9306BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EA.Application.Data", "EA.Application.Data\EA.Application.Data.csproj", "{BF7043CD-A9BF-4B39-82AA-A897FA2F1705}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EA.Application.Data", "EA.Application.Data\EA.Application.Data.csproj", "{BF7043CD-A9BF-4B39-82AA-A897FA2F1705}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EA.Application.Dto", "EA.Application.Dto\EA.Application.Dto.csproj", "{C734448A-17C5-4D75-83E7-20EC9F16E07B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EA.Application.Dto", "EA.Application.Dto\EA.Application.Dto.csproj", "{C734448A-17C5-4D75-83E7-20EC9F16E07B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EA.Application.Test", "EA.Application.Test\EA.Application.Test.csproj", "{CCB0BBB6-4E9F-4A90-BA70-C723DE529B57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EA.Application.Test", "EA.Application.Test\EA.Application.Test.csproj", "{CCB0BBB6-4E9F-4A90-BA70-C723DE529B57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EA.Application.WebApi", "EA.Application.WebApi\EA.Application.WebApi.csproj", "{7443F216-E23A-446F-808A-AFE44B0E93B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EA.Application.WebApi", "EA.Application.WebApi\EA.Application.WebApi.csproj", "{7443F216-E23A-446F-808A-AFE44B0E93B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

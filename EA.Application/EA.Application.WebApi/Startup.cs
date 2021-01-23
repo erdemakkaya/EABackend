@@ -77,14 +77,11 @@ namespace EA.Application.WebApi
             services.ConfigureApplicationCookie(options => options.LoginPath = "/api/Token");
             #endregion
             #region LoggingSection
-            //appsettings.json dosyasında bulunan Logging ayarları olarak hangi seviyede loglama yapılacağını bildiriyor ve sonradan eklediğimiz
-            //FilePrefix, LogDirectory, FileSizeLimit alanlarını da manuel olarak ayar dosyasından çekerek gerekli atamaları yapıyoruz
-            //Böylece bu ayarları değiştirmek için projeyi yeniden deploy etmemiz gerekmeyecek.
             services.AddLogging(builder => builder.AddFile(options =>
             {
-                options.FileName = _config["Logging:Options:FilePrefix"]; // Log dosyasının isminin nasıl başlayacağını belirtiyoruz
-                options.LogDirectory = _config["Logging:Options:LogDirectory"]; // Log dosyaları hangi klasöre yazılacak
-                options.FileSizeLimit = int.Parse(_config["Logging:Options:FileSizeLimit"]); // Maksimum log dosya boyutu ne kadar olacak, byte üzerinden hesaplanır. (appsettings.json dosyasında bu değer 20971520 olarak belirledik. Bu değer 20 megabyte ın byte halidir.)
+                options.FileName = _config["Logging:Options:FilePrefix"]; 
+                options.LogDirectory = _config["Logging:Options:LogDirectory"]; 
+                options.FileSizeLimit = int.Parse(_config["Logging:Options:FileSizeLimit"]); 
             }));
             #endregion
 
@@ -94,9 +91,7 @@ namespace EA.Application.WebApi
             #endregion
 
             #region DependencyInjectionSection
-            //Dependency injection ile çözümleme yapabilmek için burada hangi interface üzerinden projede instance alınmak istenirse hangi sınıfın dönüleceğini belirliyoruz.
-            //eğer buradaki bağımlılıklardan birini değiştireceksek tek yapmamız gereken o interface'e karşılık gelen sınıfı değiştirmek olacak.
-            services.AddScoped<IUnitofWork, UnitofWork>();
+            services.AddScoped<IUnitofWork, UnitofWork<ApplicationDbContext>>();
             services.AddTransient(typeof(IPagingLinks<>), typeof(PagingLinks<>));
             services.AddScoped<ILanguageController, LanguageController>();
             services.AddScoped<IUserController, UserController>();

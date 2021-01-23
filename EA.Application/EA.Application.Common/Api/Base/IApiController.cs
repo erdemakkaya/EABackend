@@ -15,10 +15,10 @@ namespace EA.Application.Common.Api.Base
         #endregion
 
         #region PostMethods
-        ApiResult<TDto> Add(TDto item);
-        Task<ApiResult<TDto>> AddAsync(TDto item);
-        ApiResult<TDto> Update(TDto item);
-        Task<ApiResult<TDto>> UpdateAsync(TDto item);
+        ApiResult<string> Add(TDto item);
+        Task<ApiResult<string>> AddAsync(TDto item);
+        ApiResult<string> Update(TDto item);
+        Task<ApiResult<string>> UpdateAsync(TDto item);
         ApiResult<string> Delete(TDto item);
         Task<ApiResult<string>> DeleteAsync(TDto item);
         ApiResult<string> DeleteById(Guid Id);

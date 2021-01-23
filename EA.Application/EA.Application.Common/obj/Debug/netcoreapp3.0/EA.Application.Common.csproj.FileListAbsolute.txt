@@ -17,8 +17,9 @@ D:\eas\ea.application\EA.Application\EA.Application.Common\obj\Debug\netcoreapp3
 D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Common\bin\Debug\netcoreapp3.0\EA.Application.Common.deps.json
 D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Common\bin\Debug\netcoreapp3.0\EA.Application.Common.dll
 D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Common\bin\Debug\netcoreapp3.0\EA.Application.Common.pdb
-D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Common\obj\Debug\netcoreapp3.0\EA.Application.Common.csprojAssemblyReference.cache
 D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Common\obj\Debug\netcoreapp3.0\EA.Application.Common.AssemblyInfoInputs.cache
 D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Common\obj\Debug\netcoreapp3.0\EA.Application.Common.AssemblyInfo.cs
+D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Common\obj\Debug\netcoreapp3.0\EA.Application.Common.csproj.CoreCompileInputs.cache
 D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Common\obj\Debug\netcoreapp3.0\EA.Application.Common.dll
 D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Common\obj\Debug\netcoreapp3.0\EA.Application.Common.pdb
+D:\Users\ABS\Documents\GitHub\EABackend\EA.Application\EA.Application.Common\obj\Debug\netcoreapp3.0\EA.Application.Common.csprojAssemblyReference.cache

@@ -26,47 +26,34 @@ namespace EA.Application.Common.Api.Base
         public readonly IUnitofWork _uow;
         public readonly IServiceProvider _service;
         public readonly ILogger<TController> _logger;
-        private readonly IGenericRepository<T> _repository;
+        private readonly IRepository<T> _repository;
         public readonly IMapper _mapper;
 
         #endregion Variables
 
-        #region Constructor
+       
 
-        /// <summary>
-        /// Burada dependency injection'ı farklı şekilde kullanmaya karar verdim çünkü diğer projelerimde constructorlar içerisinde çok fazla parametre oluyor ve okunması zor hale geliyordu.
-        /// IserviceProvider benim için dependency injection ile resolve işlemi görecek yani bağımlılığı service provider ile projeme enjekte edeceğim.
-        /// </summary>
-        /// <param name="service">bağımlılıkları eklemek için service provider kullanacağız</param>
+     
         public ApiBase(IServiceProvider service,IMapper mapper)
         {
             //Get Service diyerek dependencylerimizi ınject ediyoruz
             _logger = service.GetService<ILogger<TController>>();
             _uow = service.GetService<IUnitofWork>();
-            _repository = _uow.GetRepository<T>();
+            _repository = _uow.GetDefaultRepo<T>();
             _mapper = mapper;
             _service = service;
         }
 
-        #endregion Constructor
+        
 
-        #region GetMethods
+        
 
-        /// <summary>
-        /// Kayıtları veritabanından bulurken bu metodu kullanacağız. Bu method içerisine aranan kaydın Id bilgisini alacak ve geriye ilgili entity ile maplenmiş dto cevabını dönecek.
-        /// </summary>
-        /// <param name="id">bulunacak kaydın Guid türünde Id bilgisi</param>
-        /// <returns></returns>
         [HttpGet("Find")]
         public virtual ApiResult<TDto> Find(Guid id)
         {
             try
             {
-                //Logger ile basit bir log yazıyoru. Ben logların mantıklı olması için zaman harcamadım siz senaryonuza göre loglamanıza karar verebilirsiniz.
-                //Burada sadece ilgili tablodan hangi id ye sahip kayıt istenmiş ise onu logluyoruz.
                 _logger.LogInformation($"Find record from the {typeof(T)} table with id:{id}");
-
-                //Geriye Mapper ile mapleyerek dto dönüyoruz T bizim entitylerimiz için generic type ve TDto ise dto larımız için generic type görevi görüyor.
                 return new ApiResult<TDto>
                 {
                     Message = "Success",
@@ -76,7 +63,6 @@ namespace EA.Application.Common.Api.Base
             }
             catch (Exception ex)
             {
-                //Hata olması durumunda loglama yapıyoruz ve kullanıcıya HTTP durum kodlarından 500 yani internal server error dönüyoruz.
                 _logger.LogError($"Find record error from the {typeof(T)} table with id:{id} error:{ex}");
                 return new ApiResult<TDto>
                 {
@@ -93,10 +79,7 @@ namespace EA.Application.Common.Api.Base
             return Find(id);
         }
 
-        /// <summary>
-        /// İlgili tabloda bulunan tüm kayıtları seçmek için kullanılacak olan metod
-        /// </summary>
-        /// <returns></returns>
+       
         [HttpGet("GetAll")]
         public virtual ApiResult<List<TDto>> GetAll()
         {
@@ -123,18 +106,14 @@ namespace EA.Application.Common.Api.Base
             }
         }
 
-        /// <summary>
-        /// Sorgulanabilir ve üzerinde işlemler yapılabilir bir Queryable dönen metodumuz
-        /// Burada önemli nokta herhangi bir şekilde mapper ile işimiz yok direk olarak queryable donuyoruz.
-        /// </summary>
-        /// <returns></returns>
+      
         [HttpGet("GetQueryable")]
         public virtual IQueryable<T> GetQueryable()
         {
             try
             {
                 _logger.LogInformation($"GetQueryable from the {typeof(T)} table");
-                return _repository.GetAll();
+                return _repository.GetMany();
             }
             catch (Exception Ex)
             {
@@ -143,11 +122,6 @@ namespace EA.Application.Common.Api.Base
             }
         }
 
-        /// <summary>
-        /// Sayfalanmış listeler dönmek için kullanacağımız metot
-        /// </summary>
-        /// <param name="pagingParams">Hangi sayfa isteniyor ve sayfada kaç kayıt listelenecek gibi bilgileri parametre olarak bekler</param>
-        /// <returns></returns>
         [HttpPost("GetAllWithPaging")]
         public virtual ApiResult GetAllWithPaging(PagingParams pagingParams)
         {
@@ -187,16 +161,7 @@ namespace EA.Application.Common.Api.Base
             }
         }
 
-        #endregion GetMethods
-
-        #region PostMethods
-
-        /// <summary>
-        /// Id ile Kayıt silmek için kullanacağımız metod
-        /// </summary>
-        /// <param name="id">Silinecek kaydın Id bilgisi</param>
-        /// <returns></returns>
-        [HttpPost("DeleteById")]
+        [HttpDelete("DeleteById")]
         public virtual ApiResult<string> DeleteById(Guid id)
         {
             try
@@ -222,23 +187,12 @@ namespace EA.Application.Common.Api.Base
             }
         }
 
-        /// <summary>
-        /// Id ile Kayıt silmek için kullanacağımız metod
-        /// </summary>
-        /// <param name="id">Silinecek kaydın Id bilgisi</param>
-        /// <returns></returns>
-        [HttpPost("DeleteByIdAsync")]
+        [HttpDelete("DeleteByIdAsync")]
         public virtual async Task<ApiResult<string>> DeleteByIdAsync(Guid id)
         {
             return DeleteById(id);
         }
-
-        /// <summary>
-        /// Model ile kayıt silmek için kullanacağımız metod
-        /// </summary>
-        /// <param name="item">silinecek kayda ait model</param>
-        /// <returns></returns>
-        [HttpPost("Delete")]
+        [HttpDelete("Delete")]
         public virtual ApiResult<string> Delete([FromBody] TDto item)
         {
             var resolvedItem = String.Join(',', item.GetType().GetProperties().Select(x => $" - {x.Name} : {x.GetValue(item)} - ").ToList());
@@ -265,42 +219,32 @@ namespace EA.Application.Common.Api.Base
             }
         }
 
-        /// <summary>
-        /// Model ile kayıt silmek için kullanacağımız metod
-        /// </summary>
-        /// <param name="item">silinecek kayda ait model</param>
-        /// <returns></returns>
-        [HttpPost("DeleteAsync")]
+        [HttpDelete("DeleteAsync")]
         public virtual async Task<ApiResult<string>> DeleteAsync([FromBody] TDto item)
         {
             return Delete(item);
         }
 
-        /// <summary>
-        /// Kayıt eklemek için metod
-        /// </summary>
-        /// <param name="item">Eklenecek kayıt</param>
-        /// <returns></returns>
         [HttpPost("Add")]
-        public virtual ApiResult<TDto> Add([FromBody] TDto item)
+        public virtual ApiResult<string> Add([FromBody] TDto item)
         {
             var resolvedItem = String.Join(',', item.GetType().GetProperties().Select(x => $" - {x.Name} : {x.GetValue(item)} - ").ToList());
             try
             {
                 var sd = _mapper.Map<T>(item);
-                var TResult = _repository.Add(sd);
+                _repository.Insert(sd);
                 _logger.LogInformation($"Add record to the {typeof(T)} table. Data:{resolvedItem}");
-                return new ApiResult<TDto>
+                return new ApiResult<string>
                 {
                     StatusCode = StatusCodes.Status200OK,
                     Message = "Success",
-                    Data = _mapper.Map<T, TDto>(TResult)
+                    Data = null
                 };
             }
             catch (Exception ex)
             {
                 _logger.LogError($"Add record error to the {typeof(T)} table. Data: {resolvedItem} exception:{ex}");
-                return new ApiResult<TDto>
+                return new ApiResult<string>
                 {
                     StatusCode = StatusCodes.Status500InternalServerError,
                     Message = $"Error:{ex.Message}",
@@ -309,41 +253,33 @@ namespace EA.Application.Common.Api.Base
             }
         }
 
-        /// <summary>
-        /// Kayıt eklemek için metod
-        /// </summary>
-        /// <param name="item">Eklenecek kayıt</param>
-        /// <returns></returns>
+       
         [HttpPost("AddAsync")]
-        public virtual async Task<ApiResult<TDto>> AddAsync([FromBody] TDto item)
+        public virtual async Task<ApiResult<string>> AddAsync([FromBody] TDto item)
         {
             return Add(item);
         }
 
-        /// <summary>
-        /// Kayıt güncellemek için metod
-        /// </summary>
-        /// <param name="item"></param>
-        /// <returns></returns>
-        [HttpPost("Update")]
-        public virtual ApiResult<TDto> Update([FromBody] TDto item)
+     
+        [HttpPut("Update")]
+        public virtual ApiResult<string> Update([FromBody] TDto item)
         {
             var resolvedItem = String.Join(',', item.GetType().GetProperties().Select(x => $" - {x.Name} : {x.GetValue(item)} - ").ToList());
             try
             {
-                var TResult = _repository.Update(_mapper.Map<T>(item));
+                _repository.Update(_mapper.Map<T>(item));
                 _logger.LogInformation($"Update record to the {typeof(T)} table. Data:{resolvedItem}");
-                return new ApiResult<TDto>
+                return new ApiResult<string>
                 {
                     StatusCode = StatusCodes.Status200OK,
                     Message = "Success",
-                    Data = _mapper.Map<T, TDto>(TResult)
+                    Data = null
                 };
             }
             catch (Exception ex)
             {
                 _logger.LogError($"Update record error to the {typeof(T)} table. Data: {resolvedItem} exception:{ex}");
-                return new ApiResult<TDto>
+                return new ApiResult<string>
                 {
                     StatusCode = StatusCodes.Status500InternalServerError,
                     Message = $"Error:{ex.Message}",
@@ -352,29 +288,15 @@ namespace EA.Application.Common.Api.Base
             }
         }
 
-        /// <summary>
-        /// Kayıt güncellemek için metod
-        /// </summary>
-        /// <param name="item"></param>
-        /// <returns></returns>
-        [HttpPost("UpdateAsync")]
-        public virtual async Task<ApiResult<TDto>> UpdateAsync([FromBody] TDto item)
+        [HttpPut("UpdateAsync")]
+        public virtual async Task<ApiResult<string>> UpdateAsync([FromBody] TDto item)
         {
             return Update(item);
         }
 
-        #endregion PostMethods
-
-        #region SaveChanges
-
-        /// <summary>
-        /// İşlemleri kaydedecek metot. Bu metot çağrılmaz ise işlemler veritabanına gitmeyecektir.
-        /// </summary>
         private void Save()
         {
             _uow.SaveChanges(true);
         }
-
-        #endregion SaveChanges
     }
 }
