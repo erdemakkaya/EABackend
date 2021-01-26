@@ -47,6 +47,10 @@
               "target": "Package",
               "version": "[9.0.0, )"
             },
+            "FluentMigrator.Extensions.SqlServer": {
+              "target": "Package",
+              "version": "[3.2.11, )"
+            },
             "Microsoft.AspNetCore.Mvc.Abstractions": {
               "target": "Package",
               "version": "[2.2.0, )"

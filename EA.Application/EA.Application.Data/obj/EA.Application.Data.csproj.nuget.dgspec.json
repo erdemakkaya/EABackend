@@ -47,6 +47,10 @@
               "target": "Package",
               "version": "[9.0.0, )"
             },
+            "FluentMigrator.Extensions.SqlServer": {
+              "target": "Package",
+              "version": "[3.2.11, )"
+            },
             "Microsoft.AspNetCore.Mvc.Abstractions": {
               "target": "Package",
               "version": "[2.2.0, )"
@@ -126,6 +130,18 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "FluentMigrator": {
+              "target": "Package",
+              "version": "[3.2.11, )"
+            },
+            "FluentMigrator.Extensions.SqlServer": {
+              "target": "Package",
+              "version": "[3.2.11, )"
+            },
+            "FluentMigrator.Runner": {
+              "target": "Package",
+              "version": "[3.2.11, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.0, )"

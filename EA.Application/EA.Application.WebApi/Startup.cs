@@ -28,6 +28,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
 using EA.Application.WebApi.Swagger;
+using FluentMigrator.Runner;
 
 namespace EA.Application.WebApi
 {
@@ -89,7 +90,12 @@ namespace EA.Application.WebApi
             services.AddDbContext<ApplicationDbContext>();
             services.AddScoped<DbContext, ApplicationDbContext>();
             #endregion
-
+            services.AddFluentMigratorCore()
+                .ConfigureRunner(builder => builder
+                    .AddSqlServer()
+                    .WithGlobalConnectionString(_config.GetConnectionString("DefaultConnection"))
+                    .ScanIn(typeof(ApplicationDbContext).Assembly).For.All())
+                .AddLogging(lb => lb.AddFluentMigratorConsole());
             #region DependencyInjectionSection
             services.AddScoped<IUnitofWork, UnitofWork<ApplicationDbContext>>();
             services.AddTransient(typeof(IPagingLinks<>), typeof(PagingLinks<>));
